@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-carbon text-titanium font-body antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    @apply bg-racing-red/60 text-white;
+  }
+
+  /* Telemetry numerals helpers */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* ─── HUD / Telemetry corner bracket frame ─── */
+  .hud-frame {
+    position: relative;
+  }
+  .hud-frame::before,
+  .hud-frame::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-color: currentColor;
+    border-style: solid;
+    pointer-events: none;
+  }
+  .hud-frame::before {
+    top: 0;
+    left: 0;
+    border-width: 2px 0 0 2px;
+  }
+  .hud-frame::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 2px 2px 0;
+  }
+  .hud-frame-inner::before,
+  .hud-frame-inner::after {
+    width: 18px;
+    height: 18px;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+  }
+
+  /* ─── Throttle fill hover (left-to-right color wipe) ─── */
+  .throttle-link {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .throttle-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #e10600 0%, #e10600 100%);
+    transform: translateX(-101%);
+    transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+    z-index: -1;
+  }
+  .throttle-link:hover::before,
+  .throttle-link:focus-visible::before {
+    transform: translateX(0);
+  }
+
+  .throttle-link-blue::before {
+    background: linear-gradient(90deg, #00d4ff 0%, #00d4ff 100%);
+  }
+
+  /* ─── Checkered flag divider strip ─── */
+  .checkered-divider {
+    height: 14px;
+    background-image: repeating-conic-gradient(
+      #0a0a0c 0% 25%,
+      #e8e8ec 0% 50%
+    );
+    background-size: 28px 28px;
+    background-position: 0 0;
+  }
+  .checkered-divider-thin {
+    height: 8px;
+    background-size: 16px 16px;
+  }
+
+  /* ─── Carbon fiber texture fill ─── */
+  .carbon-texture {
+    background-color: #0a0a0c;
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.025) 0px,
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255, 255, 255, 0.025) 0px,
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px,
+        transparent 4px
+      );
+  }
+
+  /* ─── Racing stripe accent (red-white-red ─── */
+  .racing-stripe {
+    height: 6px;
+    background: linear-gradient(
+      90deg,
+      #e10600 0%,
+      #e10600 33%,
+      transparent 33%,
+      transparent 66%,
+      #e10600 66%,
+      #e10600 100%
+    );
+  }
+
+  /* ─── Chevron / pill nav edge ─── */
+  .chevron-pill {
+    clip-path: polygon(
+      4% 0,
+      96% 0,
+      100% 50%,
+      96% 100%,
+      4% 100%,
+      0% 50%
+    );
+  }
+  .chevron-left {
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+  }
+  .chevron-right {
+    clip-path: polygon(0 0, 92% 0, 100% 100%, 8% 100%);
+  }
+
+  /* ─── Paddock-pass card shape ─── */
+  .paddock-pass {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 94% 100%, 0 100%);
+  }
+
+  /* ─── F1 start lights (5 red lights) ─── */
+  .f1-light {
+    width: 56px;
+    height: 56px;
+    border-radius: 9999px;
+    background: radial-gradient(circle at 30% 30%, #3a0a0a 0%, #1a0505 60%, #0a0000 100%);
+    border: 2px solid #2a2a2e;
+    opacity: 0.25;
+    transition: all 0.3s ease-out;
+  }
+  .f1-light.on {
+    background: radial-gradient(circle at 30% 30%, #ff4a44 0%, #e10600 50%, #a30400 100%);
+    box-shadow: 0 0 30px 6px rgba(225, 6, 0, 0.75), 0 0 60px 10px rgba(225, 6, 0, 0.35);
+    opacity: 1;
+    border-color: #ff5a54;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-display-condensed {
+    font-family: var(--font-barlow-condensed), sans-serif;
+    letter-spacing: -0.02em;
+  }
+  .wordmark-bevel {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #e8e8ec 25%,
+      #b8b8c0 55%,
+      #888890 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.6));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
