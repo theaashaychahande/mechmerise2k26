@@ -1,36 +1,83 @@
-import Link from "next/link";
+"use client";
 
-const links = [
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+
+const CENTER_LINKS = [
   { label: "ACCOMMODATION", href: "/accommodation" },
   { label: "WORKSHOPS", href: "/workshops", badge: "EARLY BIRD" },
   { label: "COMPETITIONS", href: "/competitions" },
   { label: "IGNITION", href: "/ignition" },
 ];
 
-export default function Navbar() {
+export default function Navbar({
+  onMenuOpen,
+}: {
+  onMenuOpen?: (open: boolean) => void;
+}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    const next = !menuOpen;
+    setMenuOpen(next);
+    onMenuOpen?.(next);
+  };
+
   return (
-    <nav className="pointer-events-none fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-      <div className="pointer-events-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-none bg-asphalt/70 px-5 py-2 backdrop-blur-md border border-titanium/10 chevron-pill shadow-inner-f1">
+    <nav className="pointer-events-none fixed top-4 left-0 right-0 z-50 flex justify-center px-3 sm:px-4">
+      <div className="pointer-events-auto flex w-full max-w-6xl items-center justify-between gap-2 sm:gap-4 bg-asphalt/75 px-3 sm:px-5 py-2 backdrop-blur-lg border border-titanium/10 chevron-pill shadow-inner-f1">
+        {/* ── Logo (top-left) ── */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-display-condensed text-xl font-black tracking-widest text-titanium throttle-link px-3 py-1"
+          className="group flex items-center gap-2 sm:gap-3 throttle-link px-2 sm:px-3 py-1.5 rounded-sm"
+          aria-label="MECHMERISE 2K26 — Home"
         >
-          <span className="text-racing-red">M</span>
-          <span>ECH</span>
-          <span className="text-circuit-blue">26</span>
+          {/* Event crest logo */}
+          <div className="relative w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-full bg-carbon/60 border border-titanium/15 flex items-center justify-center overflow-hidden">
+            <Image
+              src="/logo-removebg-preview.png"
+              alt="MECHMERISE 2K26 Crest"
+              fill
+              sizes="40px"
+              className="object-contain p-1 scale-[1.05]"
+              priority
+            />
+          </div>
+          {/* Text wordmark (md+ only) */}
+          <div className="hidden md:block relative h-7 w-44 shrink-0">
+            <Image
+              src="/text_logo-removebg-preview.png"
+              alt="MECHMERISE 2K26 Wordmark"
+              fill
+              sizes="176px"
+              className="object-contain object-left"
+              priority
+            />
+          </div>
+          {/* Fallback compact wordmark (sm and below) */}
+          <div className="md:hidden flex items-center font-display-condensed text-base sm:text-lg font-black tracking-tighter italic">
+            <span className="text-racing-red">M</span>
+            <span className="text-titanium">ERCH</span>
+            <span className="text-circuit-blue ml-1 not-italic">26</span>
+          </div>
         </Link>
 
-        <div className="hidden md:flex items-center gap-1">
-          {links.map((l) => (
+        {/* ── Center Links (md+ only) ── */}
+        <div className="hidden md:flex items-center gap-0.5">
+          {CENTER_LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="relative px-3 py-2 text-[11px] font-bold tracking-widest text-titanium/80 hover:text-white transition-colors throttle-link"
+              className="relative px-3 py-2 text-[11px] font-bold tracking-widest text-titanium/80 hover:text-white transition-colors throttle-link overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {l.label}
                 {l.badge && (
-                  <span className="rounded-sm bg-racing-red/20 px-1.5 py-0.5 text-[9px] text-racing-red border border-racing-red/40">
+                  <span className="relative inline-flex items-center gap-1 rounded-sm bg-racing-red/20 px-1.5 py-0.5 text-[9px] font-bold text-racing-red border border-racing-red/40">
+                    <span className="w-1 h-1 rounded-full bg-racing-red animate-telemetry-blink" />
                     {l.badge}
                   </span>
                 )}
@@ -39,10 +86,175 @@ export default function Navbar() {
           ))}
         </div>
 
-        <button className="chevron-right bg-racing-red px-5 py-2 text-[11px] font-bold tracking-widest text-white hover:bg-racing-red-600 transition-colors throttle-link throttle-link-blue relative overflow-hidden">
-          <span className="relative z-10">SIGN IN</span>
-        </button>
+        {/* ── Right side: Hamburger (mobile) + Sign In (all) ── */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Mobile hamburger */}
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={toggleMenu}
+            className="lg:hidden relative flex items-center justify-center w-9 h-9 rounded-md bg-carbon/60 border border-titanium/15 text-titanium/80 hover:text-white hover:border-circuit-blue/60 transition-colors throttle-link throttle-link-blue overflow-hidden"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {menuOpen ? (
+                <motion.span
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <X size={18} strokeWidth={2.2} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="menu"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0 flex items-center justify-center"
+                >
+                  <Menu size={18} strokeWidth={2.2} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </button>
+
+          {/* Sign In */}
+          <button className="chevron-right relative bg-racing-red px-4 sm:px-5 py-2 text-[10px] sm:text-[11px] font-bold tracking-widest text-white overflow-hidden throttle-link">
+            <span className="relative z-10">SIGN IN</span>
+          </button>
+        </div>
       </div>
+
+      {/* ── Mobile Drawer backdrop + sheet (inline so it's under the nav pill z-index context) ── */}
+      <MobileDrawer open={menuOpen} onClose={() => setMenuOpen(false)} />
     </nav>
+  );
+}
+
+/* ───────────── Mobile Hamburger Drawer ───────────── */
+
+const DRAWER_MAIN_LINKS = [
+  { label: "Home", href: "/", icon: "home" },
+  { label: "Competitions", href: "/competitions", icon: "events" },
+  { label: "Workshops", href: "/workshops", icon: "workshops", badge: "EARLY BIRD" },
+  { label: "Ignition", href: "/ignition", icon: "ignition" },
+  { label: "Accommodation", href: "/accommodation", icon: "accommodation" },
+  { label: "About Us", href: "/about", icon: "about" },
+  { label: "Contact Us", href: "/contact", icon: "contact" },
+];
+
+function MobileDrawer({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            key="drawer-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-carbon/80 backdrop-blur-sm z-[-1] lg:hidden"
+            aria-hidden
+          />
+          {/* Sheet */}
+          <motion.div
+            key="drawer-sheet"
+            initial={{ y: "-110%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-110%", opacity: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 32 }}
+            className="fixed top-[76px] left-3 right-3 lg:hidden z-[60] max-w-md mx-auto origin-top"
+          >
+            <div className="relative bg-asphalt/95 border border-titanium/15 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.8)] paddock-pass overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 racing-stripe" />
+              <div className="px-5 pt-6 pb-4 border-b border-titanium/10">
+                <p className="text-[10px] tracking-[0.35em] uppercase text-circuit-blue tabular animate-telemetry-blink">
+                  ▣ Nav · Paddock Gate
+                </p>
+                <h3 className="mt-1 font-display-condensed text-2xl font-black italic wordmark-bevel">
+                  SELECT A LAP
+                </h3>
+              </div>
+              <ul className="p-3 space-y-1">
+                {DRAWER_MAIN_LINKS.map((l, idx) => (
+                  <motion.li
+                    key={l.href}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.05 * idx, duration: 0.2 }}
+                  >
+                    <Link
+                      href={l.href}
+                      onClick={onClose}
+                      className="group flex items-center justify-between gap-3 px-4 py-3.5 rounded-md text-titanium/90 throttle-link throttle-link-blue overflow-hidden relative"
+                    >
+                      <span className="relative z-10 flex items-center gap-3">
+                        <span className="w-7 h-7 rounded-md border border-titanium/20 flex items-center justify-center text-circuit-blue group-hover:border-circuit-blue/50 transition-colors shrink-0">
+                          <span className="font-mono text-[11px] tabular font-bold">
+                            0{idx + 1}
+                          </span>
+                        </span>
+                        <span className="font-display-condensed text-lg font-bold tracking-wide uppercase">
+                          {l.label}
+                        </span>
+                        {l.badge && (
+                          <span className="chevron-right bg-racing-red px-2 py-0.5 text-[9px] font-bold tracking-wider text-white">
+                            {l.badge}
+                          </span>
+                        )}
+                      </span>
+                      <span className="relative z-10 text-titanium/30 group-hover:text-circuit-blue transition-colors">
+                        ›
+                      </span>
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+              <div className="px-5 pt-3 pb-5 border-t border-titanium/10">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-titanium/50 tabular mb-3">
+                  Pit Radio · Socials
+                </p>
+                <div className="flex items-center gap-2">
+                  {[
+                    { l: "IG", href: "#", c: "hover:text-pink-400" },
+                    { l: "X", href: "#", c: "hover:text-white" },
+                    { l: "IN", href: "#", c: "hover:text-[#0077B5]" },
+                    { l: "FB", href: "#", c: "hover:text-[#1877F2]" },
+                    { l: "YT", href: "#", c: "hover:text-[#FF0000]" },
+                    { l: "WA", href: "#", c: "hover:text-[#25D366]" },
+                  ].map((s) => (
+                    <Link
+                      key={s.l}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={s.l}
+                      className={`flex-1 text-center py-2.5 rounded-md bg-carbon/60 border border-titanium/10 font-display-condensed text-sm font-black text-titanium/70 ${s.c} hover:border-titanium/30 transition-colors`}
+                    >
+                      {s.l}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div className="w-full checkered-divider-thin" />
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }

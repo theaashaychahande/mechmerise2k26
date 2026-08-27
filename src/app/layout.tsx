@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { barlowCondensed, inter, robotoMono } from "@/lib/fonts";
+import GlobalSiteChrome from "@/components/GlobalSiteChrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
       className={`${barlowCondensed.variable} ${inter.variable} ${robotoMono.variable}`}
     >
       <body className="min-h-screen bg-carbon carbon-texture">
-        {children}
+        <GlobalSiteChrome>{children}</GlobalSiteChrome>
       </body>
     </html>
   );

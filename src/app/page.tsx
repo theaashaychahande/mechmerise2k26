@@ -2,9 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
-import SocialRail from "@/components/SocialRail";
 import Hero from "@/components/Hero";
 import SectionDivider from "@/components/SectionDivider";
 import EventCard from "@/components/EventCard";
@@ -83,11 +80,20 @@ export default function DesignSystemPage() {
         )}
       </AnimatePresence>
 
-      <Navbar />
-      <Sidebar />
-      <SocialRail />
+      <main className="relative max-w-7xl mx-auto px-6">
+        {/* ── STEP 2 BADGE ── */}
+        <section className="mb-16 -mt-14">
+          <div className="relative hud-frame text-circuit-blue inline-flex items-center gap-3 px-5 py-3 bg-asphalt/80 border border-titanium/10 backdrop-blur">
+            <span className="w-2 h-2 rounded-full bg-racing-red animate-telemetry-blink" />
+            <span className="font-display-condensed text-sm font-black italic tracking-wider">
+              STEP <span className="text-white">02</span> / NAV · CHROME
+            </span>
+            <span className="text-[10px] tracking-[0.3em] uppercase text-titanium/60 tabular">
+              — Throttle-fill · Mobile Drawer · Bottom Nav —
+            </span>
+          </div>
+        </section>
 
-      <main className="relative z-0 pt-32 pb-8 lg:pl-24 lg:pr-24">
         {/* ── HERO PREVIEW ── */}
         <section className="relative">
           <Hero />
