@@ -269,12 +269,12 @@ export default function SponsorsAndCTA() {
                   </span>
                 </Link>
                 <Link
-                  href="/ignition"
+                  href="/about"
                   className="group relative w-full chevron-pill bg-carbon/70 border border-titanium/20 py-4 px-6 text-[11px] md:text-xs font-black tracking-[0.3em] uppercase text-titanium overflow-hidden throttle-link flex items-center justify-center gap-3"
                 >
                   <span className="relative z-10 flex items-center gap-3">
                     <Rocket size={16} className="text-racing-red" />
-                    IGNITION · INAUGURAL CEREMONY
+                    ABOUT US · OUR STORY
                   </span>
                 </Link>
                 {/* Trophy badge */}

@@ -3,14 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { Home, CalendarDays, Mail, Info, Wrench, Flame, Bed } from "lucide-react";
+import { Home, CalendarDays, Mail, Info, Wrench, Users, MessageSquare } from "lucide-react";
 
 const ITEMS = [
   { label: "Home", href: "/", icon: Home, short: "Home" },
   { label: "Events", href: "/competitions", icon: CalendarDays, short: "Events" },
   { label: "Workshops", href: "/workshops", icon: Wrench, short: "Shops" },
-  { label: "Ignition", href: "/ignition", icon: Flame, short: "Ignite" },
-  { label: "Accommodation", href: "/accommodation", icon: Bed, short: "Stay" },
+  { label: "Team", href: "/team", icon: Users, short: "Team" },
   { label: "Contact", href: "/contact", icon: Mail, short: "Mail" },
   { label: "About", href: "/about", icon: Info, short: "About" },
 ];
@@ -81,8 +80,8 @@ const BOTTOM_ITEMS = [
   { label: "Home", href: "/", icon: Home },
   { label: "Events", href: "/competitions", icon: CalendarDays },
   { label: "Workshops", href: "/workshops", icon: Wrench },
+  { label: "Team", href: "/team", icon: Users },
   { label: "Contact", href: "/contact", icon: Mail },
-  { label: "About", href: "/about", icon: Info },
 ];
 
 export function BottomNav() {

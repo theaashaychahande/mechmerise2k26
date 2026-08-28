@@ -7,10 +7,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const CENTER_LINKS = [
-  { label: "ACCOMMODATION", href: "/accommodation" },
   { label: "WORKSHOPS", href: "/workshops", badge: "EARLY BIRD" },
   { label: "COMPETITIONS", href: "/competitions" },
-  { label: "IGNITION", href: "/ignition" },
 ];
 
 export default function Navbar({
@@ -86,7 +84,7 @@ export default function Navbar({
           ))}
         </div>
 
-        {/* ── Right side: Hamburger (mobile) + Sign In (all) ── */}
+        {/* ── Right side: Hamburger (mobile) ── */}
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Mobile hamburger */}
           <button
@@ -123,10 +121,7 @@ export default function Navbar({
             </AnimatePresence>
           </button>
 
-          {/* Sign In */}
-          <button className="chevron-right relative bg-racing-red px-4 sm:px-5 py-2 text-[10px] sm:text-[11px] font-bold tracking-widest text-white overflow-hidden throttle-link">
-            <span className="relative z-10">SIGN IN</span>
-          </button>
+
         </div>
       </div>
 
@@ -142,9 +137,8 @@ const DRAWER_MAIN_LINKS = [
   { label: "Home", href: "/", icon: "home" },
   { label: "Competitions", href: "/competitions", icon: "events" },
   { label: "Workshops", href: "/workshops", icon: "workshops", badge: "EARLY BIRD" },
-  { label: "Ignition", href: "/ignition", icon: "ignition" },
-  { label: "Accommodation", href: "/accommodation", icon: "accommodation" },
   { label: "About Us", href: "/about", icon: "about" },
+  { label: "Team", href: "/team", icon: "team" },
   { label: "Contact Us", href: "/contact", icon: "contact" },
 ];
 

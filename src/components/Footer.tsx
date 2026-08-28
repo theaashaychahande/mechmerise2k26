@@ -23,7 +23,7 @@ export default function Footer() {
               Navigate
             </h4>
             <ul className="space-y-2 text-sm text-titanium/70">
-              {["Competitions", "Workshops", "Ignition", "Accommodation"].map(
+              {["Competitions", "Workshops", "About", "Team", "Contact"].map(
                 (l) => (
                   <li key={l}>
                     <Link
