@@ -17,7 +17,7 @@ export default function Footer() {
               Technology, Nagpur.
             </p>
           </div>
-// 
+
           <div>
             <h4 className="text-[11px] font-bold tracking-[0.3em] uppercase text-circuit-blue mb-4 tabular">
               Navigate
