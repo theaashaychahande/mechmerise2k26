@@ -168,7 +168,7 @@ export default function HomeHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.95, duration: 0.5 }}
-          className="mt-10 md:mt-12 font-display-condensed text-xl md:text-3xl font-bold tracking-[0.15em] uppercase italic text-titanium/85 text-balance max-w-3xl mx-auto"
+          className="mt-8 md:mt-12 font-display-condensed text-2xl md:text-3xl font-bold tracking-[0.1em] uppercase italic text-titanium/90 text-balance max-w-3xl mx-auto leading-snug"
         >
           Ignite the Machine · <span className="text-circuit-blue">Engineer the Future</span>
         </motion.p>

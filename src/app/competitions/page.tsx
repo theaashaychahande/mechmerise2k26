@@ -36,7 +36,7 @@ export default function CompetitionsPage() {
       <section
         aria-label="Competition event grid"
         id="event-grid"
-        className="relative py-24 md:py-32 overflow-hidden"
+        className="relative py-16 md:py-32 overflow-hidden"
       >
         <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
 

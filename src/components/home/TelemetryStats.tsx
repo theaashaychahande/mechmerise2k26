@@ -125,7 +125,7 @@ export default function TelemetryStats() {
   return (
     <section
       id="telemetry-stats"
-      className="relative py-20 md:py-28 overflow-hidden border-y border-titanium/10 bg-asphalt/30"
+      className="relative py-14 md:py-28 overflow-hidden border-y border-titanium/10 bg-asphalt/30"
     >
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-60" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent via-carbon/30 to-transparent" />

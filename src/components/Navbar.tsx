@@ -26,11 +26,11 @@ export default function Navbar({
 
   return (
     <nav className="pointer-events-none fixed top-4 left-0 right-0 z-50 flex justify-center px-3 sm:px-4">
-      <div className="pointer-events-auto flex w-full max-w-6xl items-center justify-between gap-2 sm:gap-4 bg-asphalt/75 px-3 sm:px-5 py-2 backdrop-blur-lg border border-titanium/10 chevron-pill shadow-inner-f1">
+      <div className="pointer-events-auto relative flex w-full lg:w-auto items-center justify-between gap-2 sm:gap-5 bg-asphalt/80 pl-3 sm:pl-4 pr-3 sm:pr-4 py-2 backdrop-blur-lg border border-titanium/10 chevron-pill shadow-inner-f1">
         {/* ── Logo (top-left) ── */}
         <Link
           href="/"
-          className="group flex items-center gap-2 sm:gap-3 throttle-link px-2 sm:px-3 py-1.5 rounded-sm"
+          className="group flex items-center gap-2 sm:gap-3 throttle-link px-1 sm:px-3 py-1.5 rounded-sm"
           aria-label="MECHMERISE 2K26 — Home"
         >
           {/* Event crest logo */}
@@ -63,13 +63,13 @@ export default function Navbar({
           </div>
         </Link>
 
-        {/* ── Center Links (md+ only) ── */}
-        <div className="hidden md:flex items-center gap-0.5">
-          {CENTER_LINKS.map((l) => (
+        {/* ── Center Links (lg+ only) ── */}
+        <div className="hidden lg:flex items-center gap-1 mx-2">
+          {CENTER_LINKS.map((l, i) => (
             <Link
               key={l.href}
               href={l.href}
-              className="relative px-3 py-2 text-[11px] font-bold tracking-widest text-titanium/80 hover:text-white transition-colors throttle-link overflow-hidden"
+              className="relative px-4 py-2 text-[11px] font-bold tracking-widest text-titanium/85 hover:text-white transition-colors throttle-link overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 {l.label}
@@ -80,19 +80,25 @@ export default function Navbar({
                   </span>
                 )}
               </span>
+              {/* divider between the two links */}
+              {i < CENTER_LINKS.length - 1 && (
+                <span
+                  aria-hidden
+                  className="absolute right-[-2px] top-1/2 -translate-y-1/2 h-5 w-px bg-titanium/15"
+                />
+              )}
             </Link>
           ))}
         </div>
 
-        {/* ── Right side: Hamburger (mobile) ── */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          {/* Mobile hamburger */}
+        {/* ── Right: Hamburger (mobile + tablet only) ── */}
+        <div className="flex items-center lg:hidden">
           <button
             type="button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={toggleMenu}
-            className="lg:hidden relative flex items-center justify-center w-9 h-9 rounded-md bg-carbon/60 border border-titanium/15 text-titanium/80 hover:text-white hover:border-circuit-blue/60 transition-colors throttle-link throttle-link-blue overflow-hidden"
+            className="relative flex items-center justify-center w-9 h-9 rounded-md bg-carbon/60 border border-titanium/15 text-titanium/80 hover:text-white hover:border-circuit-blue/60 transition-colors throttle-link throttle-link-blue overflow-hidden"
           >
             <AnimatePresence mode="wait" initial={false}>
               {menuOpen ? (
@@ -120,8 +126,6 @@ export default function Navbar({
               )}
             </AnimatePresence>
           </button>
-
-
         </div>
       </div>
 

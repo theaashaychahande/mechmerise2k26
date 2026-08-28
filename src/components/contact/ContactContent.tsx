@@ -11,7 +11,7 @@ const SOCIALS = [
 
 export default function ContactContent() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative py-16 md:py-32 overflow-hidden">
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
 
       <div className="relative max-w-7xl mx-auto px-6">

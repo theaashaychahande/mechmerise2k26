@@ -75,7 +75,7 @@ const TIER_ACCENTS = {
 
 export default function SponsorsAndCTA() {
   return (
-    <section id="sponsors-cta" className="relative py-20 md:py-28 overflow-hidden">
+    <section id="sponsors-cta" className="relative py-14 md:py-28 overflow-hidden">
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
 
       <div className="relative max-w-7xl mx-auto px-6 space-y-20 md:space-y-28">

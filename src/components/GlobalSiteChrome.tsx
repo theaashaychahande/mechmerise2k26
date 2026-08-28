@@ -66,10 +66,10 @@ export default function GlobalSiteChrome({
     () =>
       [
         "relative z-0",
-        // Top nav breathing room
-        "pt-32 md:pt-36",
+        // Top nav breathing room (tighter on mobile so hero fills more)
+        "pt-24 md:pt-36",
         // Bottom nav breathing room (< lg only)
-        "pb-28 lg:pb-10",
+        "pb-24 lg:pb-10",
         // Side rail gutters on desktop
         "lg:pl-20 xl:pl-28 lg:pr-20 xl:pr-28",
         reducedMotion ? "" : "",
@@ -79,14 +79,28 @@ export default function GlobalSiteChrome({
 
   return (
     <div className="relative min-h-screen" data-reduced-motion={reducedMotion}>
-      {/* Background accents */}
+      {/* Global site-wide background (home-hero.png) */}
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[-2] bg-carbon carbon-texture"
+        className="pointer-events-none fixed inset-0 z-[-3] bg-carbon"
       />
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-[-1] bg-gradient-to-b from-transparent via-carbon/30 to-carbon"
+        className="pointer-events-none fixed inset-0 z-[-2] bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/home-hero.png')" }}
+      />
+      {/* Darkening + readability overlays (stronger on desktop, balanced on mobile) */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[-1] bg-carbon/80"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[-1] bg-gradient-to-b from-carbon/70 via-carbon/40 to-carbon/90"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 z-[-1] carbon-texture opacity-30 mix-blend-overlay"
       />
 
       {/* ─── Chrome ─── */}

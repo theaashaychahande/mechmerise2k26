@@ -81,7 +81,7 @@ export default function LegacyAndPillars() {
   return (
     <section
       id="legacy-pillars"
-      className="relative py-24 md:py-32 overflow-hidden"
+      className="relative py-16 md:py-32 overflow-hidden"
     >
       {/* Background accents */}
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
