@@ -33,15 +33,7 @@ export default function Sidebar() {
         <span className="absolute bottom-3 left-3 w-3 h-3 border-b border-l border-racing-red/40" />
 
         {/* top label */}
-        <div className="text-center pb-2">
-          <p className="text-[8px] tracking-[0.3em] uppercase text-circuit-blue tabular animate-telemetry-blink">
-            ▢ Nav
-          </p>
-          <p className="font-display-condensed text-[11px] font-black tracking-widest text-titanium/70 uppercase leading-none mt-0.5">
-            Paddock
-          </p>
-        </div>
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-titanium/15 to-transparent mb-2" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-titanium/15 to-transparent mb-2 mt-1" />
 
         {ITEMS.map(({ label, href, icon: Icon }, idx) => {
           const isActive =
