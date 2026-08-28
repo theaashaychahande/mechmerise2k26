@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowDown, CalendarDays, Tag } from "lucide-react";
 
@@ -27,7 +28,10 @@ export function F1StartLights() {
     return () => timers.forEach(clearTimeout);
   }, []);
   return (
-    <div className="flex items-center gap-3 md:gap-4 mb-12 md:mb-16">
+    <div
+      className="flex items-center gap-3 md:gap-4 mb-12 md:mb-16 scale-75 sm:scale-100"
+      style={{ transformOrigin: "center" }}
+    >
       {[0, 1, 2, 3, 4].map((i) => (
         <div key={i} className={`f1-light ${lights[i] ? "on" : ""}`} />
       ))}
@@ -54,21 +58,20 @@ export default function HomeHero() {
           aria-hidden
           className="absolute inset-0 bg-cover bg-center scale-110"
           style={{
-            backgroundImage:
-              "url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=abstract%20cinematic%20dark%20racing%20background%20with%20dramatic%20side%20lighting%20motion%20blur%20checkered%20flag%20shadows%20carbon%20fiber%20texture%20low%20angle%20tarmac%20perspective%20no%20logos%20no%20text%20no%20cars%20moody%20teal%20and%20red%20rim%20light&image_size=landscape_16_9')",
+            backgroundImage: "url('/images/home-hero.png')",
           }}
         />
         {/* Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-carbon/85 via-carbon/60 to-carbon" />
-        <div className="absolute inset-0 bg-gradient-to-r from-carbon/80 via-transparent to-carbon/80" />
-        <div className="absolute inset-0 carbon-texture opacity-40 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-b from-carbon/70 via-carbon/45 to-carbon" />
+        <div className="absolute inset-0 bg-gradient-to-r from-carbon/60 via-transparent to-carbon/60" />
+        <div className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
         {/* Vignette */}
         <div
           aria-hidden
           className="absolute inset-0"
           style={{
             boxShadow:
-              "inset 0 0 220px 60px rgba(0,0,0,0.85), inset 0 -140px 120px 0 rgba(10,10,12,1)",
+              "inset 0 0 160px 40px rgba(0,0,0,0.7), inset 0 -100px 100px 0 rgba(10,10,12,0.9)",
           }}
         />
       </div>
@@ -125,34 +128,30 @@ export default function HomeHero() {
           transition={{ delay: 0.45, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative"
         >
-          {/* Shadow/backing wordmark for depth */}
-          <h1
-            aria-hidden
-            className="pointer-events-none absolute inset-0 font-display-condensed text-[18vw] md:text-[12rem] lg:text-[14rem] font-black italic tracking-tight leading-[0.8] skew-x-[-7deg] text-carbon"
-            style={{
-              WebkitTextStroke: "1px rgba(232,232,236,0.06)",
-              transform: "translate(4px, 4px) skewX(-7deg)",
-            }}
-          >
-            MECHMERISE
-          </h1>
-          {/* Foreground wordmark */}
-          <h1 className="font-display-condensed text-[18vw] md:text-[12rem] lg:text-[14rem] font-black italic tracking-tight leading-[0.8] skew-x-[-7deg] wordmark-bevel">
-            MECHMERISE
-          </h1>
+          {/* Foreground logo wordmark */}
+          <div className="relative flex justify-center">
+            <Image
+              src="/text_logo-removebg-preview.png"
+              alt="MECHMERISE 2K26"
+              width={857}
+              height={291}
+              priority
+              className="w-[88vw] max-w-[820px] h-auto skew-x-[-7deg]"
+            />
+          </div>
 
           {/* 2K26 chip */}
           <motion.div
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.9, type: "spring", stiffness: 200 }}
-            className="mt-4 md:mt-6 inline-flex items-center gap-4 px-6 py-3 border border-titanium/15 bg-carbon/50 backdrop-blur-sm chevron-both"
+            className="mt-4 md:mt-6 inline-flex flex-wrap justify-center items-center gap-x-4 gap-y-2 max-w-full px-5 md:px-6 py-3 border border-titanium/15 bg-carbon/50 backdrop-blur-sm chevron-both"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-racing-red animate-telemetry-blink" />
             <span className="font-display-condensed text-2xl md:text-4xl font-black tracking-[0.2em] text-racing-red tabular">
               2 K 2 6
             </span>
-            <div className="h-6 w-px bg-titanium/20" />
+            <div className="hidden sm:block h-6 w-px bg-titanium/20" />
             <span className="flex items-center gap-2 text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-circuit-blue tabular">
               <CalendarDays size={14} />
               EDITION · 08
