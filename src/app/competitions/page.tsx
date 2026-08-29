@@ -29,6 +29,7 @@ export default function CompetitionsPage() {
         kicker="ROUND 01 · MAIN EVENT"
         title="COMPETITIONS"
         prompt="dramatic%20top%20down%20racetrack%20hairpin%20aerial%20shot%20with%20checkered%20curb%20racing%20marks%20moody%20dusk%20lighting%20carbon%20asphalt%20motion%20blur%20no%20logos%20no%20cars%20no%20liveries"
+        image="/images/events-bg.png"
         accent="racing-red"
       />
 

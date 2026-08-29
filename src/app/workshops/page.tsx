@@ -16,6 +16,7 @@ export default function WorkshopsPage() {
         title="WORKSHOPS"
         subCopy="Hands-on sessions. Real tools. Real skills. Early bird spots are live — grab yours before the grid fills up."
         prompt="close%20up%20mechanical%20workshop%20tools%20gears%20wrenches%20on%20dark%20workbench%20dramatic%20side%20lighting%20sparks%20metal%20industrial%20atmosphere%20no%20logos%20no%20text"
+        image="/images/workshops-bg.png"
         accent="circuit-blue"
       />
       <WorkshopsList />

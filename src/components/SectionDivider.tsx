@@ -19,12 +19,14 @@ export default function SectionDivider({
   title = "COMPETITIONS",
   subCopy,
   prompt,
+  image,
   accent = "racing-red",
 }: {
   kicker?: string;
   title?: string;
   subCopy?: string;
   prompt?: string;
+  image?: string;
   accent?: "racing-red" | "circuit-blue" | "pit-amber" | "titanium";
 }) {
   const { scrollYProgress } = useScroll();
@@ -55,22 +57,24 @@ export default function SectionDivider({
         style={{
           y: parallaxBg,
           opacity: bgFade,
-          backgroundImage: `url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=${bgImage}&image_size=landscape_16_9')`,
+          backgroundImage: image
+            ? `url(${image})`
+            : `url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=${bgImage}&image_size=landscape_16_9')`,
         }}
         aria-hidden
         className="absolute inset-0 bg-cover bg-center scale-110"
       />
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/70 to-carbon" />
-      <div className="absolute inset-0 bg-gradient-to-r from-carbon/80 via-transparent to-carbon/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/40 to-carbon" />
+      <div className="absolute inset-0 bg-gradient-to-r from-carbon/60 via-transparent to-carbon/60" />
       <div className="absolute inset-0 carbon-texture opacity-40 mix-blend-overlay" />
       <div
         aria-hidden
         className="absolute inset-0"
         style={{
           boxShadow:
-            "inset 0 0 220px 60px rgba(0,0,0,0.85), inset 0 -120px 120px 0 rgba(10,10,12,1)",
+            "inset 0 0 120px 30px rgba(0,0,0,0.55), inset 0 -140px 140px 0 rgba(10,10,12,0.9)",
         }}
       />
 
