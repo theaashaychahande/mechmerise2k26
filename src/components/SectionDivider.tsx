@@ -83,13 +83,6 @@ export default function SectionDivider({
         aria-hidden
         className="absolute inset-6 md:inset-14 border border-circuit-blue/20 hud-frame pointer-events-none"
       />
-      {/* HUD tag */}
-      <div
-        aria-hidden
-        className="absolute left-1/2 -translate-x-1/2 top-8 md:top-10 text-[10px] tracking-[0.4em] uppercase text-circuit-blue/70 tabular animate-telemetry-blink"
-      >
-        ▣  section · {title.toLowerCase()} · grid_view
-      </div>
 
       {/* Racing stripe + checkered strips */}
       <div aria-hidden className="absolute top-0 left-0 right-0 h-1 racing-stripe" />
