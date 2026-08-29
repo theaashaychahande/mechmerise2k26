@@ -1,7 +1,7 @@
 import HomeHero from "@/components/home/HomeHero";
 import LegacyAndPillars from "@/components/home/LegacyAndPillars";
 import TelemetryStats from "@/components/home/TelemetryStats";
-import SponsorsAndCTA from "@/components/home/SponsorsAndCTA";
+import CompetitionsCTA from "@/components/home/CompetitionsCTA";
 import Footer from "@/components/Footer";
 
 /**
@@ -21,7 +21,7 @@ export default function HomePage() {
       <HomeHero />
       <LegacyAndPillars />
       <TelemetryStats />
-      <SponsorsAndCTA />
+      <CompetitionsCTA />
       <Footer />
     </>
   );

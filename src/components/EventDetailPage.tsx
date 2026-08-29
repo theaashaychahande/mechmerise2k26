@@ -169,7 +169,40 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
               transition={{ delay: 0.15, duration: 0.6 }}
               className="lg:sticky lg:top-28 space-y-5"
             >
-              {/* HUD / telemetry corner-bracket frame */}
+              {/* EVENT LOGO — top slot */}
+              <div
+                className={`hud-frame border ${a.bracket} p-3 relative text-white`}
+                style={{ color: a.bar === "bg-titanium" ? "#E8E8EC" : undefined }}
+              >
+                <div className="relative flex items-center justify-center aspect-[16/5] overflow-hidden">
+                  <div className="absolute inset-0 opacity-40 bg-cover bg-center"
+                    style={{ backgroundImage: "url('/images/events-bg.png')" }} />
+                  <div className={`absolute inset-0 ${a.badgeBg}`} />
+                  {event.logoUrl ? (
+                    <img
+                      src={event.logoUrl}
+                      alt={`${event.name} logo`}
+                      className="relative z-10 max-h-full max-w-[78%] object-contain p-4"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="relative z-10 flex flex-col items-center gap-2 px-6 text-center">
+                      <span className={`font-display-condensed text-3xl md:text-4xl font-black italic uppercase tracking-tight ${a.text}`}>
+                        {event.name}
+                      </span>
+                      <span className="text-[9px] tracking-[0.3em] uppercase text-titanium/50 tabular">
+                        LOGO SLOT · drag transparent PNG here
+                      </span>
+                    </div>
+                  )}
+                  {/* HUD tag */}
+                  <span className="absolute top-2 left-3 z-20 text-[9px] tracking-[0.3em] uppercase text-white/70 tabular">
+                    logo_01
+                  </span>
+                </div>
+              </div>
+
+              {/* EVENT POSTER — full key art below */}
               <div
                 className={`hud-frame border ${a.bracket} p-3 relative text-white`}
                 style={{ color: a.bar === "bg-titanium" ? "#E8E8EC" : undefined }}
@@ -179,7 +212,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                   <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
                     <span className={`w-1.5 h-1.5 rounded-full ${a.bar} animate-telemetry-blink`} />
                     <span className="text-[9px] tracking-[0.35em] uppercase text-white/90 tabular">
-                      live · on-board
+                      poster · on-board
                     </span>
                   </div>
                   <div
@@ -190,7 +223,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                   </div>
                   {/* image */}
                   <div
-                    style={{ backgroundImage: `url(${event.heroUrl})` }}
+                    style={{ backgroundImage: `url(${event.posterUrl ?? event.heroUrl})` }}
                     className="absolute inset-0 bg-cover bg-center"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-transparent to-black/30" />

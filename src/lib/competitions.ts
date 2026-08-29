@@ -13,6 +13,10 @@ export type CompetitionEvent = {
   accent: "racing-red" | "circuit-blue" | "pit-amber" | "titanium";
   /** Key art URL (generic racing-adjacent imagery, no real F1 branding) */
   heroUrl: string;
+  /** Event logo asset (transparent PNG preferred). Falls back to crest placeholder. */
+  logoUrl?: string;
+  /** Full event poster asset. Falls back to the hero key art. */
+  posterUrl?: string;
   /** Sponsor / partner label for the top-left badge */
   partnerBadge?: string;
   /** Prize pool display text (₹ X,XXX) at bottom strip */

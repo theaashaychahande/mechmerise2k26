@@ -1,7 +1,7 @@
 import SectionDivider from "@/components/SectionDivider";
 import EventCard from "@/components/EventCard";
 import RacetrackConnector from "@/components/RacetrackConnector";
-import SponsorsAndCTA from "@/components/home/SponsorsAndCTA";
+import CompetitionsCTA from "@/components/home/CompetitionsCTA";
 import Footer from "@/components/Footer";
 import { COMPETITIONS } from "@/lib/competitions";
 
@@ -81,7 +81,7 @@ export default function CompetitionsPage() {
         </div>
       </section>
 
-      <SponsorsAndCTA />
+      <CompetitionsCTA />
       <Footer />
     </>
   );

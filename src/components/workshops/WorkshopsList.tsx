@@ -34,34 +34,6 @@ const WORKSHOPS = [
     accent: "circuit-blue",
     tags: ["Software", "CAD", "Simulation"],
   },
-  {
-    id: "robotics-101",
-    title: "Robotics 101",
-    subtitle: "Arduino + Motor Control",
-    description:
-      "Build a line-follower from scratch. Arduino programming, sensor integration, motor drivers, and chassis design — all in one afternoon.",
-    date: "FEB 22, 2026",
-    time: "10:00 AM – 3:00 PM",
-    capacity: "35 seats",
-    fee: "₹ 250",
-    earlyBird: false,
-    accent: "pit-amber",
-    tags: ["Arduino", "Robotics", "DIY Kit Included"],
-  },
-  {
-    id: "3d-printing",
-    title: "3D Printing & Additive",
-    subtitle: "FDM to Functional Parts",
-    description:
-      "Slicing, material science, print settings, and post-processing. Take home a part you designed and printed yourself.",
-    date: "FEB 22, 2026",
-    time: "2:00 PM – 5:00 PM",
-    capacity: "25 seats",
-    fee: "₹ 200",
-    earlyBird: false,
-    accent: "titanium",
-    tags: ["3D Printing", "Design", "Take-home Kit"],
-  },
 ];
 
 const ACCENT_MAP = {
