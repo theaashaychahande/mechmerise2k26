@@ -54,9 +54,17 @@ const STUDENTS = [
 export default function TeamGrid() {
   return (
     <section className="relative py-16 md:py-32 overflow-hidden">
-      <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
+      {/* Team background image */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/team-bg.png')" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/80 to-carbon" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/70 via-transparent to-carbon/70" />
+      <div aria-hidden className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
 
-      <div className="relative max-w-7xl mx-auto px-6 space-y-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
         {/* ─── FACULTY ─── */}
         <div>
           <motion.div
