@@ -115,9 +115,6 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className={`text-[11px] tracking-[0.4em] uppercase ${a.text} tabular mb-3 animate-telemetry-blink`}>
-              ▣  EVENT DOSSIER · {event.slug.toUpperCase().replaceAll("-", "_")}
-            </p>
             <h1 className={`font-display-condensed text-5xl md:text-7xl font-black italic leading-none tracking-tighter ${a.text}`}>
               {event.name}
             </h1>

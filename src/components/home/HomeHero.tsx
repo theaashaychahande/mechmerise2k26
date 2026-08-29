@@ -81,12 +81,6 @@ export default function HomeHero() {
         aria-hidden
         className="absolute inset-6 md:inset-10 border border-circuit-blue/20 hud-frame pointer-events-none"
       />
-      <div
-        aria-hidden
-        className="absolute left-1/2 -translate-x-1/2 top-14 md:top-16 text-[10px] tracking-[0.4em] uppercase text-circuit-blue/70 tabular animate-telemetry-blink"
-      >
-        ▣  on-board · camera · main  ▣
-      </div>
 
       {/* ─────── Racing Stripe Accents ─────── */}
       <div aria-hidden className="absolute top-0 left-0 right-0 h-1 racing-stripe" />

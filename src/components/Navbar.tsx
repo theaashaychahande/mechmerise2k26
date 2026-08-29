@@ -178,9 +178,6 @@ function MobileDrawer({
             <div className="relative bg-asphalt/95 border border-titanium/15 shadow-[0_20px_60px_-10px_rgba(0,0,0,0.8)] paddock-pass overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 racing-stripe" />
               <div className="px-5 pt-6 pb-4 border-b border-titanium/10">
-                <p className="text-[10px] tracking-[0.35em] uppercase text-circuit-blue tabular animate-telemetry-blink">
-                  ▣ Nav · Paddock Gate
-                </p>
                 <h3 className="mt-1 font-display-condensed text-2xl font-black italic wordmark-bevel">
                   SELECT A LAP
                 </h3>
