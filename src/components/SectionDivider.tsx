@@ -134,7 +134,7 @@ export default function SectionDivider({
           whileInView={{ opacity: 1, y: 0, letterSpacing: "-0.04em" }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display-condensed text-[20vw] md:text-[14rem] lg:text-[17rem] font-black italic leading-none skew-x-[-8deg] wordmark-bevel text-center"
+          className="font-display-condensed text-[13vw] md:text-[12vw] lg:text-[13vw] font-black italic leading-none skew-x-[-8deg] wordmark-bevel text-center"
         >
           {title}
         </motion.h1>
