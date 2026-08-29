@@ -44,8 +44,8 @@ export default function CompetitionsPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/events-bg.png')" }}
         />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/80 to-carbon" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/70 via-transparent to-carbon/70" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/30 to-carbon" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/55 via-transparent to-carbon/55" />
         <div aria-hidden className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
 
         {/* Racetrack SVG behind the grid (lg only) */}
