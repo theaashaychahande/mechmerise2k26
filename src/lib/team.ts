@@ -65,7 +65,7 @@ export const TEAMS: { team: string; members: StudentMember[] }[] = [
   {
     team: "Promotion",
     members: [
-      { name: "Yash Wadnere", role: "Coordinator", year: "4th ME" },
+      { name: "Yash wadnere ", role: "Coordinator", year: "4th ME" },
       { name: "Aboli Gajbhiye", role: "Co-Coordinator", year: "3rd ME" },
     ],
   },
