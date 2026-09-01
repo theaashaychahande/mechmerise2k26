@@ -31,7 +31,8 @@ const CARD_TOPBAR: Record<"circuit-blue" | "pit-amber", string> = {
   "pit-amber": "bg-pit-amber/50",
 };
 
-const ROLE_COLOR: Record<"circuit-blue" | "pit-amber", string> = {
+const ROLE_COLOR: Record<Accent, string> = {
+  "racing-red": "text-racing-red",
   "circuit-blue": "text-circuit-blue",
   "pit-amber": "text-pit-amber",
 };
@@ -46,19 +47,25 @@ function initialsOf(name: string) {
     .join("");
 }
 
+const ROLE_MAP: Record<Accent, string> = {
+  "racing-red": "FACULTY",
+  "circuit-blue": "COORDINATOR",
+  "pit-amber": "LEAD TEAM",
+};
+
 function TeamPhoto({ src, name, accent }: { src: string; name: string; accent: Accent }) {
   const [error, setError] = useState(false);
 
   return (
     <div
-      className={`relative w-24 h-32 shrink-0 overflow-hidden border bg-carbon/80 transition-all duration-300 ${PHOTO_RING[accent]}`}
+      className={`relative w-full aspect-[3/4] overflow-hidden border bg-carbon/80 transition-all duration-300 ${PHOTO_RING[accent]}`}
     >
-      <span aria-hidden className="absolute top-2 left-2 w-4 h-4 border-t border-l border-current" />
-      <span aria-hidden className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-current" />
+      <span aria-hidden className="absolute top-2 left-2 w-4 h-4 border-t border-l border-current z-10" />
+      <span aria-hidden className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-current z-10" />
 
       {error ? (
         <div className="w-full h-full flex items-center justify-center">
-          <span className="font-display-condensed text-2xl font-black italic text-titanium/40">
+          <span className="font-display-condensed text-3xl font-black italic text-titanium/40">
             {initialsOf(name)}
           </span>
         </div>
@@ -71,18 +78,32 @@ function TeamPhoto({ src, name, accent }: { src: string; name: string; accent: A
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
         />
       )}
+
+      <div
+        aria-hidden
+        className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-carbon via-carbon/70 to-transparent"
+      />
+
+      <div className="absolute inset-x-0 bottom-0 p-3 z-10">
+        <p className={`text-[9px] tracking-[0.25em] uppercase tabular mb-1 ${ROLE_COLOR[accent]}`}>
+          {ROLE_MAP[accent]}
+        </p>
+        <h3 className="font-display-condensed text-base md:text-lg font-bold uppercase tracking-wide text-titanium leading-tight">
+          {name}
+        </h3>
+      </div>
     </div>
   );
 }
 
-function StudentCard({ member, accent }: { member: StudentMember; accent: "circuit-blue" | "pit-amber" }) {
+function StudentCard({ member, accent, subLabel }: { member: StudentMember; accent: "circuit-blue" | "pit-amber"; subLabel?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.5 }}
-      className={`group relative flex items-center gap-4 border backdrop-blur-sm overflow-hidden transition-colors duration-300 ${CARD_BORDER[accent]} ${CARD_STRIPE[accent]} ${CARD_TOPBAR[accent]}`}
+      className={`group relative border backdrop-blur-sm overflow-hidden transition-colors duration-300 ${CARD_BORDER[accent]} ${CARD_STRIPE[accent]} ${CARD_TOPBAR[accent]} `}
     >
       <div
         aria-hidden
@@ -91,14 +112,11 @@ function StudentCard({ member, accent }: { member: StudentMember; accent: "circu
 
       <TeamPhoto src={member.photo} name={member.name} accent={accent} />
 
-      <div className="min-w-0 pr-4">
-        <h3 className="font-display-condensed text-lg md:text-xl font-bold uppercase tracking-wide text-titanium truncate">
-          {member.name}
-        </h3>
-        <p className={`text-[10px] tracking-[0.2em] uppercase tabular mt-0.5 ${ROLE_COLOR[accent]}`}>
+      <div className="flex items-center justify-between gap-3 px-3 py-2">
+        <span className={`text-[9px] tracking-[0.2em] uppercase tabular ${ROLE_COLOR[accent]}`}>
           {member.role}
-        </p>
-        <p className="text-[10px] text-titanium/40 mt-1 tabular">{member.year}</p>
+        </span>
+        <span className="text-[9px] text-titanium/40 tabular">{subLabel ?? member.team ?? member.year}</span>
       </div>
     </motion.div>
   );
@@ -160,18 +178,13 @@ export default function TeamGrid() {
                 <span aria-hidden className="absolute top-3 left-3 w-3 h-3 border-t border-l border-racing-red/30" />
                 <span aria-hidden className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-racing-red/30" />
 
-                <div className="p-6 flex items-start gap-4">
-                  <TeamPhoto src={f.photo} name={f.name} accent="racing-red" />
+                <TeamPhoto src={f.photo} name={f.name} accent="racing-red" />
 
-                  <div className="min-w-0 pt-1">
-                    <h3 className="font-display-condensed text-lg font-black uppercase tracking-wide text-titanium">
-                      {f.name}
-                    </h3>
-                    <p className="text-[10px] tracking-[0.2em] uppercase text-racing-red tabular mt-1">
-                      {f.role}
-                    </p>
-                    <p className="text-[10px] text-titanium/50 mt-2">{f.department}</p>
-                  </div>
+                <div className="px-3 py-2 border-t border-titanium/10">
+                  <p className="text-[9px] tracking-[0.2em] uppercase text-racing-red tabular">
+                    {f.role}
+                  </p>
+                  <p className="text-[9px] text-titanium/45 mt-1">{f.department}</p>
                 </div>
               </motion.div>
             ))}
