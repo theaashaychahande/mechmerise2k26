@@ -44,20 +44,24 @@ export default function Navbar({
               priority
             />
           </div>
-          {/* Text wordmark (themed) */}
-          <div className="hidden md:block flex items-center font-display-condensed font-black italic leading-none tracking-tighter select-none">
-            <span className="wordmark-bevel text-2xl">MECH</span>
-            <span className="text-racing-red text-2xl">MERI</span>
-            <span className="text-titanium text-2xl">SE</span>
-            <span className="text-circuit-blue ml-1.5 not-italic text-lg -mt-1 tracking-[0.2em] tabular">
-              2·K·26
-            </span>
+          {/* Text wordmark — unified silver bevel lockup */}
+          <div className="hidden sm:block leading-none select-none">
+            <div className="font-display-condensed font-black italic tracking-tight whitespace-nowrap">
+              <span className="wordmark-bevel text-xl md:text-2xl">MECHMERISE</span>
+              <span className="text-racing-red not-italic text-sm md:text-base ml-2 align-baseline tracking-[0.2em] tabular font-mono font-bold">
+                2K26
+              </span>
+            </div>
+            <p className="mt-0.5 text-[8px] md:text-[9px] tracking-[0.3em] uppercase text-titanium/45 tabular whitespace-nowrap">
+              Dept. of Mech Engg · SVPCET
+            </p>
           </div>
-          {/* Fallback compact wordmark (sm and below) */}
-          <div className="md:hidden flex items-center font-display-condensed text-base sm:text-lg font-black tracking-tighter italic">
-            <span className="text-racing-red">M</span>
-            <span className="text-titanium">ERCH</span>
-            <span className="text-circuit-blue ml-1 not-italic">26</span>
+          {/* Mobile fallback — full wordmark, scaled to fit */}
+          <div className="sm:hidden flex items-center font-display-condensed font-black italic leading-none tracking-tight select-none">
+            <span className="wordmark-bevel text-lg whitespace-nowrap">MECHMERISE</span>
+            <span className="text-racing-red not-italic text-xs ml-1 tracking-[0.15em] tabular font-mono font-bold">
+              26
+            </span>
           </div>
         </Link>
 
