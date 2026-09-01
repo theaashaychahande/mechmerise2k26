@@ -46,7 +46,7 @@ export default function Navbar({
           </div>
           {/* Text wordmark — unified silver bevel lockup */}
           <div className="hidden sm:block leading-none select-none">
-            <div className="font-display-condensed font-black italic tracking-tight whitespace-nowrap">
+            <div className="font-display-condensed font-extrabold tracking-tight whitespace-nowrap">
               <span className="wordmark-bevel text-xl md:text-2xl">MECHMERISE</span>
               <span className="text-racing-red not-italic text-sm md:text-base ml-2 align-baseline tracking-[0.2em] tabular font-mono font-bold">
                 2K26
@@ -57,9 +57,9 @@ export default function Navbar({
             </p>
           </div>
           {/* Mobile fallback — full wordmark, scaled to fit */}
-          <div className="sm:hidden flex items-center font-display-condensed font-black italic leading-none tracking-tight select-none">
-            <span className="wordmark-bevel text-lg whitespace-nowrap">MECHMERISE</span>
-            <span className="text-racing-red not-italic text-xs ml-1 tracking-[0.15em] tabular font-mono font-bold">
+          <div className="sm:hidden flex items-center font-display-condensed font-extrabold leading-none tracking-tight select-none">
+            <span className="wordmark-bevel text-xl whitespace-nowrap">MECHMERISE</span>
+            <span className="text-racing-red not-italic text-sm ml-1 tracking-[0.15em] tabular font-mono font-bold">
               26
             </span>
           </div>
