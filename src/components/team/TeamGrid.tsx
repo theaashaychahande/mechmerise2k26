@@ -1,8 +1,108 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Users } from "lucide-react";
-import { FACULTY, TEAM_LEAD, TEAMS } from "@/lib/team";
+import { FACULTY, TEAM_LEAD, TEAMS, type StudentMember } from "@/lib/team";
+
+type Accent = "racing-red" | "circuit-blue" | "pit-amber";
+
+const PHOTO_RING: Record<Accent, string> = {
+  "racing-red":
+    "border-racing-red/40 group-hover:border-racing-red group-hover:shadow-[0_0_30px_-5px_rgba(255,45,45,0.5)]",
+  "circuit-blue":
+    "border-circuit-blue/40 group-hover:border-circuit-blue group-hover:shadow-[0_0_30px_-5px_rgba(0,140,255,0.5)]",
+  "pit-amber":
+    "border-pit-amber/40 group-hover:border-pit-amber group-hover:shadow-[0_0_30px_-5px_rgba(255,170,0,0.5)]",
+};
+
+const CARD_BORDER: Record<"circuit-blue" | "pit-amber", string> = {
+  "circuit-blue": "border-circuit-blue/25 bg-asphalt/60 hover:bg-asphalt/90",
+  "pit-amber": "border-pit-amber/25 bg-asphalt/60 hover:bg-asphalt/90",
+};
+
+const CARD_STRIPE: Record<"circuit-blue" | "pit-amber", string> = {
+  "circuit-blue": "bg-circuit-blue/10 group-hover:bg-circuit-blue/20",
+  "pit-amber": "bg-pit-amber/10 group-hover:bg-pit-amber/20",
+};
+
+const CARD_TOPBAR: Record<"circuit-blue" | "pit-amber", string> = {
+  "circuit-blue": "bg-circuit-blue/50",
+  "pit-amber": "bg-pit-amber/50",
+};
+
+const ROLE_COLOR: Record<"circuit-blue" | "pit-amber", string> = {
+  "circuit-blue": "text-circuit-blue",
+  "pit-amber": "text-pit-amber",
+};
+
+function initialsOf(name: string) {
+  return name
+    .replace(/^dr\.\s+/i, "")
+    .split(" ")
+    .filter(Boolean)
+    .map((p) => p[0]?.toUpperCase())
+    .slice(0, 2)
+    .join("");
+}
+
+function TeamPhoto({ src, name, accent }: { src: string; name: string; accent: Accent }) {
+  const [error, setError] = useState(false);
+
+  return (
+    <div
+      className={`relative w-24 h-32 shrink-0 overflow-hidden border bg-carbon/80 transition-all duration-300 ${PHOTO_RING[accent]}`}
+    >
+      <span aria-hidden className="absolute top-2 left-2 w-4 h-4 border-t border-l border-current" />
+      <span aria-hidden className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-current" />
+
+      {error ? (
+        <div className="w-full h-full flex items-center justify-center">
+          <span className="font-display-condensed text-2xl font-black italic text-titanium/40">
+            {initialsOf(name)}
+          </span>
+        </div>
+      ) : (
+        <img
+          src={src}
+          alt={name}
+          onError={() => setError(true)}
+          loading="lazy"
+          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+        />
+      )}
+    </div>
+  );
+}
+
+function StudentCard({ member, accent }: { member: StudentMember; accent: "circuit-blue" | "pit-amber" }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+      className={`group relative flex items-center gap-4 border backdrop-blur-sm overflow-hidden transition-colors duration-300 ${CARD_BORDER[accent]} ${CARD_STRIPE[accent]} ${CARD_TOPBAR[accent]}`}
+    >
+      <div
+        aria-hidden
+        className={`absolute -left-10 -top-10 w-32 h-32 rotate-45 transition-colors duration-300 ${CARD_STRIPE[accent]}`}
+      />
+
+      <TeamPhoto src={member.photo} name={member.name} accent={accent} />
+
+      <div className="min-w-0 pr-4">
+        <h3 className="font-display-condensed text-lg md:text-xl font-bold uppercase tracking-wide text-titanium truncate">
+          {member.name}
+        </h3>
+        <p className={`text-[10px] tracking-[0.2em] uppercase tabular mt-0.5 ${ROLE_COLOR[accent]}`}>
+          {member.role}
+        </p>
+        <p className="text-[10px] text-titanium/40 mt-1 tabular">{member.year}</p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function TeamGrid() {
   return (
@@ -17,7 +117,12 @@ export default function TeamGrid() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/55 via-transparent to-carbon/55" />
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-20">
+      {/* photo naming hint */}
+      <p className="relative z-10 text-center text-[10px] tracking-[0.2em] uppercase text-titanium/25 pt-8 px-6">
+        ▣ Add passport-size photos as <span className="text-titanium/40">/images/team/&lt;name&gt;.jpg</span>
+      </p>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 mt-8 space-y-20">
         {/* ─── FACULTY ─── */}
         <div>
           <motion.div
@@ -49,24 +154,24 @@ export default function TeamGrid() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="group relative border border-racing-red/30 bg-asphalt/70 backdrop-blur-sm overflow-hidden"
+                className="group relative border border-racing-red/30 bg-asphalt/70 hover:bg-asphalt/90 backdrop-blur-sm overflow-hidden transition-colors duration-300"
               >
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-racing-red" />
                 <span aria-hidden className="absolute top-3 left-3 w-3 h-3 border-t border-l border-racing-red/30" />
                 <span aria-hidden className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-racing-red/30" />
 
-                <div className="p-6 md:p-7">
-                  <div className="w-16 h-16 mb-4 rounded-full border-2 border-racing-red/30 bg-carbon/60 flex items-center justify-center">
-                    <GraduationCap size={24} className="text-racing-red/60" />
-                  </div>
+                <div className="p-6 flex items-start gap-4">
+                  <TeamPhoto src={f.photo} name={f.name} accent="racing-red" />
 
-                  <h3 className="font-display-condensed text-xl font-black uppercase tracking-wide text-titanium">
-                    {f.name}
-                  </h3>
-                  <p className="text-[11px] tracking-[0.2em] uppercase text-racing-red tabular mt-1">
-                    {f.role}
-                  </p>
-                  <p className="text-xs text-titanium/50 mt-2">{f.department}</p>
+                  <div className="min-w-0 pt-1">
+                    <h3 className="font-display-condensed text-lg font-black uppercase tracking-wide text-titanium">
+                      {f.name}
+                    </h3>
+                    <p className="text-[10px] tracking-[0.2em] uppercase text-racing-red tabular mt-1">
+                      {f.role}
+                    </p>
+                    <p className="text-[10px] text-titanium/50 mt-2">{f.department}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -97,29 +202,8 @@ export default function TeamGrid() {
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
-            {TEAM_LEAD.map((s, idx) => (
-              <motion.div
-                key={s.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: idx * 0.06, duration: 0.5 }}
-                className="group relative border border-pit-amber/30 bg-asphalt/60 backdrop-blur-sm overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-pit-amber/60" />
-                <span aria-hidden className="absolute top-3 left-3 w-3 h-3 border-t border-l border-pit-amber/30" />
-                <span aria-hidden className="absolute bottom-3 right-3 w-3 h-3 border-b border-r border-pit-amber/30" />
-
-                <div className="p-5 md:p-6">
-                  <h3 className="font-display-condensed text-lg font-bold uppercase tracking-wide text-titanium">
-                    {s.name}
-                  </h3>
-                  <p className="text-[10px] tracking-[0.2em] uppercase text-pit-amber tabular mt-0.5">
-                    {s.role}
-                  </p>
-                  <p className="text-[10px] text-titanium/40 mt-1 tabular">{s.year} · {s.team}</p>
-                </div>
-              </motion.div>
+            {TEAM_LEAD.map((s) => (
+              <StudentCard key={s.name} member={s} accent="pit-amber" />
             ))}
           </div>
         </div>
@@ -165,19 +249,9 @@ export default function TeamGrid() {
                   <p className="text-[10px] tracking-[0.3em] uppercase text-circuit-blue tabular mb-4">
                     {t.team}
                   </p>
-                  <div className="space-y-3">
+                  <div className="space-y-4">
                     {t.members.map((m) => (
-                      <div key={m.name} className="flex items-center justify-between gap-3">
-                        <div className="min-w-0">
-                          <h3 className="font-display-condensed text-base font-bold uppercase tracking-wide text-titanium truncate">
-                            {m.name}
-                          </h3>
-                          <p className="text-[9px] text-titanium/40 mt-0.5 tabular">{m.year}</p>
-                        </div>
-                        <span className="shrink-0 text-[9px] tracking-[0.15em] uppercase text-circuit-blue/80 tabular">
-                          {m.role}
-                        </span>
-                      </div>
+                      <StudentCard key={m.name} member={m} accent="circuit-blue" />
                     ))}
                   </div>
                 </div>
