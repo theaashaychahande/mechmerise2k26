@@ -58,7 +58,7 @@ function TeamPhoto({ src, name, accent }: { src: string; name: string; accent: A
 
   return (
     <div
-      className={`relative w-full aspect-[3/4] overflow-hidden border bg-carbon/80 transition-all duration-300 ${PHOTO_RING[accent]}`}
+      className={`relative w-36 h-44 sm:w-40 sm:h-48 md:w-44 md:h-52 mx-auto mt-5 overflow-hidden border bg-carbon/80 transition-all duration-300 ${PHOTO_RING[accent]}`}
     >
       <span aria-hidden className="absolute top-2 left-2 w-4 h-4 border-t border-l border-current z-10" />
       <span aria-hidden className="absolute bottom-2 right-2 w-4 h-4 border-b border-r border-current z-10" />
