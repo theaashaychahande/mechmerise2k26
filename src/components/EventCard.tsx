@@ -209,6 +209,19 @@ export default function EventCard({
               <ArrowUpRight size={13} />
             </span>
           </Link>
+          {event.registerUrl ? (
+          <a
+            href={event.registerUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="relative chevron-left bg-racing-red py-3 text-[10px] md:text-[11px] font-black tracking-[0.3em] uppercase text-white throttle-link overflow-hidden flex items-center justify-center gap-2"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              <Flag size={13} />
+              REGISTER
+            </span>
+          </a>
+          ) : (
           <a
             href="#register"
             className="relative chevron-left bg-racing-red py-3 text-[10px] md:text-[11px] font-black tracking-[0.3em] uppercase text-white throttle-link overflow-hidden flex items-center justify-center gap-2"
@@ -218,6 +231,7 @@ export default function EventCard({
               REGISTER
             </span>
           </a>
+          )}
         </div>
       </div>
 

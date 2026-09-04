@@ -17,6 +17,8 @@ export type CompetitionEvent = {
   logoUrl?: string;
   /** Full event poster asset. Falls back to the hero key art. */
   posterUrl?: string;
+  /** Google Form registration link */
+  registerUrl?: string;
   /** Prize pool display text (₹ X,XXX) at bottom strip */
   prizePool?: string;
   /** Registration fee text */
@@ -37,46 +39,6 @@ export type CompetitionEvent = {
 
 export const COMPETITIONS: CompetitionEvent[] = [
   {
-    slug: "escapex-2-0",
-    name: "EscapeX 2.0",
-    shortTagline: "Pit Wall Escape Room",
-    accent: "racing-red",
-    heroUrl:
-      "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=cinematic%20dark%20escape%20room%20with%20circuit%20boards%20gears%20levers%20dramatic%20spotlight%20racing%20helmet%20on%20table%20red%20emergency%20lighting%20mechanical%20puzzles%20no%20logos%20no%20text&image_size=landscape_16_9",
-    logoUrl: "/logo/escapex%20logo.png",
-    posterUrl: "/posters/escape%20x.png",
-    fee: "₹ 70 Solo / ₹ 120 Duo",
-    teamSize: "1 – 2 members",
-    oneLiner:
-      "A mysterious glitch has corrupted the Minecraft world across four biomes. Solve riddles, complete challenges, and collect keys to progress. Conquer all four biomes, defeat the glitch, and save the world!",
-
-    about:
-      "EscapeX 2.0 is a Minecraft-themed escape challenge where teams navigate four corrupted biomes, solving riddles and completing tasks to collect keys. Conquer every biome, defeat the glitch, and save the world!",
-    structure: [
-      "Round 1 — Biome Entry: Solve opening riddle to unlock the first biome.",
-      "Round 2 — Biome Challenges: Complete tasks and collect keys across four biomes.",
-      "Round 3 — Glitch Boss: Final challenge to defeat the corruption.",
-      "Results — Fastest team to clear all biomes wins.",
-    ],
-    timeline: [
-      { day: "DAY 1 · SEPT 10", items: ["10:00 Registrations open", "14:00 Round 1 begins", "18:00 Results"] },
-      { day: "DAY 2 · SEPT 10", items: ["10:00 Semi-finals", "14:00 Grand Final", "17:00 Podium"] },
-    ],
-    rules: [
-      "Solo or duo participation — no team substitutions mid-event.",
-      "No outside help or internet access during the challenge.",
-      "Any form of cheating leads to immediate disqualification.",
-      "Judges' decision is final and binding.",
-    ],
-    faqs: [
-      { q: "Do we need prior Minecraft experience?", a: "Basic knowledge helps, but riddles are solvable by anyone." },
-      { q: "Can we register on the spot?", a: "Yes, subject to availability." },
-    ],
-    coordinators: [
-      { name: "Karnika A. Rangari", role: "Event Head", phone: "8087471403" },
-    ],
-  },
-  {
     slug: "cad-clash",
     name: "CAD Clash",
     shortTagline: "Design · Draft · Dominate",
@@ -85,6 +47,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=close%20up%20of%20CAD%20software%20on%20screens%20mechanical%203d%20gear%20assembly%20blueprint%20layers%20circuit%20blue%20hologram%20engineers%20workstation%20dark%20moody%20lighting%20no%20logos%20no%20software%20brands&image_size=landscape_16_9",
     logoUrl: "/logo/cad%20clash%20logo.png",
     posterUrl: "/posters/CAD.png",
+    registerUrl: "https://forms.gle/H719XX5QNnwSENf98",
     fee: "₹ 100 / participant",
     teamSize: "Individual · 1",
     oneLiner:
@@ -124,6 +87,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=low%20angle%20generic%20rc%20racing%20car%20on%20track%20motion%20blur%20amber%20pit%20lighting%20checkered%20flag%20bokeh%20no%20logos%20no%20f1%20liveries%20carbon%20track%20curbs%20dramatic&image_size=landscape_16_9",
     logoUrl: "/logo/race%20ready%20logo.png",
     posterUrl: "/posters/Race%20ready.png",
+    registerUrl: "https://forms.gle/3DiLrLvvxkBK9Zx89",
     fee: "₹ 150 Solo / ₹ 250 Duo",
     teamSize: "1 – 2 members",
     oneLiner:
@@ -164,6 +128,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=hands%20working%20in%20a%20mechanical%20workshop%20sparks%20arc%20welding%20steel%20metal%20scrap%20industrial%20vice%20tools%20titanium%20silver%20lighting%20no%20brands%20no%20faces%20cinematic&image_size=landscape_16_9",
     logoUrl: "/logo/builders%20lab.png",
     posterUrl: "/posters/builders%20lab.png",
+    registerUrl: "https://forms.gle/p9q2pfPhYvpRyYAX7",
     fee: "₹ 100 Solo / ₹ 250 Team",
     teamSize: "1 – 4 members",
     oneLiner:
@@ -204,6 +169,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=robotic%20combat%20arena%20dark%20generic%20battlebots%20in%20cage%20sparks%20flying%20red%20stadium%20lights%20impact%20smoke%20dramatic%20crowd%20silhouette%20no%20logos%20no%20brands&image_size=landscape_16_9",
     logoUrl: "/logo/endo%20arena%20logo.png",
     posterUrl: "/posters/endo%20arena.png",
+    registerUrl: "https://forms.gle/T79hsSzhQ2otBXR49",
     fee: "₹ 70 – 75 / person",
     teamSize: "Individual",
     oneLiner:
@@ -244,6 +210,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=mysterious%20campus%20treasure%20hunt%20flashlight%20beams%20checkered%20marker%20flag%20clues%20on%20mechanical%20parts%20gears%20compass%20map%20night%20cinematic%20blue%20lighting%20no%20logos&image_size=landscape_16_9",
     logoUrl: "/logo/treasure%20hunt%20logo.png",
     posterUrl: "/posters/Treasure%20hunt.png",
+    registerUrl: "https://forms.gle/XxQjwb987qfL1FnL6",
     fee: "₹ 60 Duo / ₹ 100 Squad",
     teamSize: "2 – 4 members",
     oneLiner:
@@ -283,6 +250,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=esports%20gaming%20arena%20neon%20amber%20lights%20multiple%20screens%20generic%20racing%20game%20faux%20keyboard%20mouse%20controllers%20silhouette%20crowd%20no%20logos%20no%20software%20brands%20cinematic&image_size=landscape_16_9",
     logoUrl: "/logo/battle%20verse%20logo.png",
     posterUrl: "/posters/battle%20verse.png",
+    registerUrl: "https://forms.gle/R9Mbw4DJznoNTFkK8",
     fee: "₹ 75 Duo / ₹ 140 Squad",
     teamSize: "2 – 4 members",
     oneLiner:

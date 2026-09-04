@@ -222,6 +222,17 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
 
               {/* Stacked action buttons */}
               <div className="grid gap-3">
+                {event.registerUrl ? (
+                <a
+                  href={event.registerUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`${a.buttonBg} ${a.topBg === "bg-titanium text-carbon" ? "text-carbon" : "text-white"} chevron-right py-4 px-6 text-[12px] font-black tracking-[0.3em] uppercase throttle-link flex items-center justify-center gap-2`}
+                >
+                  <Flag size={15} />
+                  Register for {event.name}
+                </a>
+                ) : (
                 <a
                   href="#register"
                   className={`${a.buttonBg} ${a.topBg === "bg-titanium text-carbon" ? "text-carbon" : "text-white"} chevron-right py-4 px-6 text-[12px] font-black tracking-[0.3em] uppercase throttle-link flex items-center justify-center gap-2`}
@@ -229,6 +240,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                   <Flag size={15} />
                   Register for {event.name}
                 </a>
+                )}
                 <div className="grid grid-cols-2 gap-3">
                   <button className="border border-titanium/20 py-3.5 px-4 text-[10px] font-black tracking-[0.25em] uppercase text-titanium throttle-link flex items-center justify-center gap-2 chevron-left">
                     <FileText size={13} />
