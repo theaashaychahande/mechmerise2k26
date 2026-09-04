@@ -161,7 +161,7 @@ export default function EventCard({
               backgroundImage: `url(${event.posterUrl ?? event.heroUrl})`,
               scale: 1.05,
             }}
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-[center_65%]"
             whileHover={{ scale: 1.12 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           />

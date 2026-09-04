@@ -204,7 +204,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                 className={`hud-frame border ${a.bracket} p-3 relative text-white`}
                 style={{ color: a.bar === "bg-titanium" ? "#E8E8EC" : undefined }}
               >
-                <div className="relative overflow-hidden aspect-[16/10]">
+                <div className="relative overflow-hidden w-full">
                   {/* telemetry HUD tag (top-left) */}
                   <div className="absolute top-3 left-3 z-20 flex items-center gap-2">
                     <span className={`w-1.5 h-1.5 rounded-full ${a.bar} animate-telemetry-blink`} />
@@ -219,11 +219,13 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                     cam_01
                   </div>
                   {/* image */}
-                  <div
-                    style={{ backgroundImage: `url(${event.posterUrl ?? event.heroUrl})` }}
-                    className="absolute inset-0 bg-cover bg-center"
+                  <img
+                    src={event.posterUrl ?? event.heroUrl}
+                    alt={`${event.name} poster`}
+                    className="relative z-10 w-full h-auto object-contain"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-transparent to-black/30" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-carbon/70 via-transparent to-black/30 z-20 pointer-events-none" />
                   {/* corner index */}
                   <div className="absolute bottom-3 left-3 z-20">
                     <span className={`px-2 py-1 text-[10px] font-black tracking-[0.25em] tabular chevron-pill ${a.topBg}`}>
