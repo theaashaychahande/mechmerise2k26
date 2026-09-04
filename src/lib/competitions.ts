@@ -124,7 +124,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=low%20angle%20generic%20rc%20racing%20car%20on%20track%20motion%20blur%20amber%20pit%20lighting%20checkered%20flag%20bokeh%20no%20logos%20no%20f1%20liveries%20carbon%20track%20curbs%20dramatic&image_size=landscape_16_9",
     logoUrl: "/logo/race%20ready%20logo.png",
     posterUrl: "/posters/Race%20ready.png",
-    teamSize: "Individual",
+    fee: "₹ 150 Solo / ₹ 250 Duo",
+    teamSize: "1 – 2 members",
     oneLiner:
       "An F1 racing simulator challenge where participants experience driving an F1 car virtually. Fastest valid lap time wins!",
 
@@ -163,7 +164,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=hands%20working%20in%20a%20mechanical%20workshop%20sparks%20arc%20welding%20steel%20metal%20scrap%20industrial%20vice%20tools%20titanium%20silver%20lighting%20no%20brands%20no%20faces%20cinematic&image_size=landscape_16_9",
     logoUrl: "/logo/builders%20lab.png",
     posterUrl: "/posters/builders%20lab.png",
-    teamSize: "Individual",
+    fee: "₹ 100 Solo / ₹ 250 Team",
+    teamSize: "1 – 4 members",
     oneLiner:
       "A two-day event — Day 1 is a hands-on workshop to build real software using AI tools, Day 2 is a live build challenge with prizes for the strongest builds.",
 
