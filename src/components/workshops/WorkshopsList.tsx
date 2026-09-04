@@ -1,38 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Wrench, Clock, Users, ArrowRight, Sparkles, Calendar } from "lucide-react";
+import { Wrench, Clock, Users, Calendar } from "lucide-react";
 
 const WORKSHOPS = [
   {
     id: "builders-lab",
     title: "Builder's Lab",
-    subtitle: "Day 1 — Fabrication Fundamentals",
+    subtitle: "AI Tools Workshop + Build Challenge",
     description:
-      "Get your hands dirty. From raw material to working prototype — learn sheet metal work, welding basics, and rapid prototyping in the college workshop.",
-    date: "FEB 21, 2026",
-    time: "10:00 AM – 4:00 PM",
-    capacity: "40 seats",
-    fee: "₹ 200",
-    earlyBird: true,
-    earlyBirdFee: "₹ 150",
-    accent: "racing-red",
-    tags: ["Hands-on", "Fabrication", "Beginner Friendly"],
+      "Day One is a hands-on workshop where students learn to build real software using AI tools, from zero prior experience. Day Two is a live build challenge where students apply what they learned to a given problem statement, with prizes for the strongest builds.",
+    date: "FEB 21–22, 2026",
+    time: "Day 1: Workshop · Day 2: Build Challenge",
+    capacity: "Open",
+    fee: "₹ 100 Solo / ₹ 250 Team",
+    accent: "titanium",
+    tags: ["AI Tools", "Software", "Beginner Friendly"],
+    coordinator: { name: "Aashay Chanhade", phone: "7507666700" },
   },
   {
-    id: "cad-mastery",
-    title: "CAD Mastery",
-    subtitle: "SolidWorks + FEA Basics",
+    id: "cad-clash",
+    title: "CAD Clash",
+    subtitle: "AutoCAD Workshop + Competition",
     description:
-      "From sketch to simulation. Master parametric modelling, assemblies, and introductory finite element analysis — skills that transfer directly to the competition grid.",
-    date: "FEB 21, 2026",
-    time: "10:00 AM – 1:00 PM",
-    capacity: "30 seats",
-    fee: "₹ 150",
-    earlyBird: true,
-    earlyBirdFee: "₹ 100",
+      "A two-day technical event featuring an AutoCAD workshop followed by a CAD competition. Participants will learn 1D & 2D AutoCAD and compete in a time-based design challenge. Winners will be judged on accuracy, speed, and performance.",
+    date: "FEB 21–22, 2026",
+    time: "Day 1: Workshop · Day 2: Competition",
+    capacity: "Open",
+    fee: "₹ 100 / participant",
     accent: "circuit-blue",
-    tags: ["Software", "CAD", "Simulation"],
+    tags: ["AutoCAD", "Design", "Technical"],
+    coordinator: { name: "Vaishnavi Nipane", phone: "7447254497" },
+  },
+  {
+    id: "race-ready",
+    title: "Race Ready",
+    subtitle: "F1 Racing Simulator Challenge",
+    description:
+      "An F1 racing simulator challenge where participants experience driving an F1 car virtually. Each participant gets a fixed amount of time or a specific number of laps on a selected F1 circuit. Their fastest valid lap time will be recorded and displayed on the leaderboard.",
+    date: "FEB 21–22, 2026",
+    time: "Practice + Timed Sessions",
+    capacity: "Open",
+    fee: "₹ 150 Solo / ₹ 250 Duo",
+    accent: "pit-amber",
+    tags: ["Racing", "Simulator", "F1"],
+    coordinator: { name: "Chaitanya Bhurande", phone: "8010777176" },
   },
 ];
 
@@ -81,28 +93,6 @@ export default function WorkshopsList() {
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Early bird banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.4 }}
-          transition={{ duration: 0.5 }}
-          className="relative mb-14 md:mb-20 p-5 md:p-6 border border-racing-red/30 bg-racing-red/5 backdrop-blur-sm overflow-hidden"
-        >
-          <div className="absolute top-0 left-0 right-0 h-0.5 racing-stripe" />
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 rounded-full bg-racing-red animate-telemetry-blink" />
-              <span className="text-[10px] tracking-[0.35em] uppercase text-racing-red tabular font-bold">
-                EARLY BIRD ACTIVE
-              </span>
-            </div>
-            <p className="text-sm text-titanium/70 leading-relaxed">
-              Spots are limited. Lock in reduced fees on select workshops before the grid closes. First come, first served.
-            </p>
-          </div>
-        </motion.div>
-
         {/* Workshop cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {WORKSHOPS.map((ws, idx) => {
@@ -140,14 +130,6 @@ export default function WorkshopsList() {
                         {ws.subtitle}
                       </p>
                     </div>
-
-                    {/* Early bird badge */}
-                    {ws.earlyBird && (
-                      <span className="shrink-0 chevron-right bg-racing-red px-3 py-1.5 text-[9px] font-bold tracking-wider text-white flex items-center gap-1.5">
-                        <Sparkles size={10} />
-                        EARLY BIRD
-                      </span>
-                    )}
                   </div>
 
                   {/* Description */}
@@ -184,31 +166,23 @@ export default function WorkshopsList() {
                     ))}
                   </div>
 
-                  {/* Fee + CTA */}
+                  {/* Fee + Coordinator */}
                   <div className="flex items-center justify-between pt-4 border-t border-titanium/10">
                     <div>
-                      {ws.earlyBird ? (
-                        <div className="flex items-center gap-2">
-                          <span className="font-display-condensed text-xl font-black text-titanium/40 line-through tabular">
-                            {ws.fee}
-                          </span>
-                          <span className="font-display-condensed text-xl font-black text-racing-red tabular">
-                            {ws.earlyBirdFee}
-                          </span>
-                        </div>
-                      ) : (
-                        <span className="font-display-condensed text-xl font-black text-titanium tabular">
-                          {ws.fee}
-                        </span>
-                      )}
+                      <span className="font-display-condensed text-xl font-black text-titanium tabular">
+                        {ws.fee}
+                      </span>
                       <p className="text-[9px] tracking-[0.2em] uppercase text-titanium/40 tabular mt-0.5">
                         per participant
                       </p>
                     </div>
-                    <button className="group/btn flex items-center gap-2 px-4 py-2.5 bg-carbon border border-titanium/20 text-[10px] font-bold tracking-widest uppercase text-titanium/80 hover:text-white hover:border-titanium/40 transition-colors throttle-link overflow-hidden">
-                      <span className="relative z-10">REGISTER</span>
-                      <ArrowRight size={12} className="relative z-10 group-hover/btn:translate-x-0.5 transition-transform" />
-                    </button>
+                    {ws.coordinator && (
+                    <div className="text-right">
+                      <p className="text-[9px] tracking-[0.2em] uppercase text-titanium/40 tabular">Coordinator</p>
+                      <p className="text-xs text-titanium/80 tabular font-semibold">{ws.coordinator.name}</p>
+                      <p className="text-[10px] text-titanium/50 tabular">{ws.coordinator.phone}</p>
+                    </div>
+                    )}
                   </div>
                 </div>
               </motion.article>
