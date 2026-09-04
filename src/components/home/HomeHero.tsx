@@ -152,7 +152,7 @@ export default function HomeHero() {
             </span>
             <span className="flex items-center gap-2 text-[10px] md:text-[11px] tracking-[0.3em] uppercase text-titanium/70 tabular">
               <Tag size={14} />
-              FEB · 2026
+              SEPT · 2026
             </span>
           </motion.div>
         </motion.div>

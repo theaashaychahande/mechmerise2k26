@@ -172,7 +172,7 @@ export default function SectionDivider({
           {[
             ["07", "Events"],
             ["₹ 2L+", "Prize Purse"],
-            ["3 Days", "MECH · FEB 21–23"],
+            ["7 Events", "MECH · SEPT 2026"],
           ].map(([v, k]) => (
             <div key={k} className="flex items-center gap-2">
               <span className="font-display-condensed text-xl md:text-2xl font-black tabular text-titanium">

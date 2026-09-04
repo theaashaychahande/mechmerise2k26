@@ -59,8 +59,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Results — Fastest team to clear all biomes wins.",
     ],
     timeline: [
-      { day: "DAY 1 · FEB 21", items: ["10:00 Registrations open", "14:00 Round 1 begins", "18:00 Results"] },
-      { day: "DAY 2 · FEB 22", items: ["10:00 Semi-finals", "14:00 Grand Final", "17:00 Podium"] },
+      { day: "DAY 1 · SEPT 10", items: ["10:00 Registrations open", "14:00 Round 1 begins", "18:00 Results"] },
+      { day: "DAY 2 · SEPT 10", items: ["10:00 Semi-finals", "14:00 Grand Final", "17:00 Podium"] },
     ],
     rules: [
       "Solo or duo participation — no team substitutions mid-event.",
@@ -98,8 +98,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Scoring: Accuracy (40%) · Speed (30%) · Performance (30%).",
     ],
     timeline: [
-      { day: "DAY 1 · FEB 21", items: ["09:00 Workshop registration", "10:00 AutoCAD workshop begins", "16:00 Workshop ends"] },
-      { day: "DAY 2 · FEB 22", items: ["10:00 CAD competition starts", "15:00 Judging", "18:00 Results"] },
+      { day: "DAY 1 · SEPT 10", items: ["09:00 Workshop registration", "10:00 AutoCAD workshop begins", "16:00 Workshop ends"] },
+      { day: "DAY 2 · SEPT 10", items: ["10:00 CAD competition starts", "15:00 Judging", "18:00 Results"] },
     ],
     rules: [
       "Only software provided on lab PCs may be used.",
@@ -138,8 +138,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Podium — Top 3 fastest lap times win.",
     ],
     timeline: [
-      { day: "DAY 1 · FEB 21", items: ["10:00 Registrations open", "14:00 Practice sessions", "18:00 Timed session begins"] },
-      { day: "DAY 2 · FEB 22", items: ["10:00 Final timed sessions", "15:00 Leaderboard freeze", "17:00 Podium"] },
+      { day: "DAY 1 · SEPT 10", items: ["10:00 Registrations open", "14:00 Practice sessions", "18:00 Timed session begins"] },
+      { day: "DAY 2 · SEPT 10", items: ["10:00 Final timed sessions", "15:00 Leaderboard freeze", "17:00 Podium"] },
     ],
     rules: [
       "Each participant gets a fixed time window or lap count.",
@@ -178,8 +178,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Results — Judged on functionality, creativity, and presentation.",
     ],
     timeline: [
-      { day: "DAY 1 · FEB 21", items: ["09:00 Workshop registration", "10:00 AI tools workshop", "16:00 Workshop ends"] },
-      { day: "DAY 2 · FEB 22", items: ["09:00 Build challenge begins", "16:00 Demo presentations", "18:00 Results"] },
+      { day: "DAY 1 · SEPT 10", items: ["09:00 Workshop registration", "10:00 AI tools workshop", "16:00 Workshop ends"] },
+      { day: "DAY 2 · SEPT 10", items: ["09:00 Build challenge begins", "16:00 Demo presentations", "18:00 Results"] },
     ],
     rules: [
       "No prior coding experience required.",
@@ -218,8 +218,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Final — Overall Performer: Combined scores determine the winner.",
     ],
     timeline: [
-      { day: "DAY 2 · FEB 22", items: ["09:00 Registrations open", "12:00 Challenge begins"] },
-      { day: "DAY 3 · FEB 23", items: ["10:00 Finals", "15:00 Winner announcement"] },
+      { day: "DAY 1 · SEPT 10", items: ["09:00 Registrations open", "12:00 Challenge begins"] },
+      { day: "DAY 2 · SEPT 10", items: ["10:00 Finals", "15:00 Winner announcement"] },
     ],
     rules: [
       "Individual participation only.",
@@ -258,7 +258,7 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Final Sprint: Last clue leading to the treasure location.",
     ],
     timeline: [
-      { day: "DAY 1 · FEB 21", items: ["15:00 Map & briefing", "16:00 Wave starts (heats)", "19:00 Award ceremony"] },
+      { day: "DAY 1 · SEPT 10", items: ["15:00 Map & briefing", "16:00 Wave starts (heats)", "19:00 Award ceremony"] },
     ],
     rules: [
       "Duo or squad participation — no solo entries.",
@@ -296,8 +296,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
       "Final — Grand Royale: Last squad standing wins.",
     ],
     timeline: [
-      { day: "DAY 2 · FEB 22", items: ["12:00 LAN opens", "13:00 Qualifier matches", "18:00 Semi-finals"] },
-      { day: "DAY 3 · FEB 23", items: ["10:00 Grand Final", "14:00 Podium ceremony"] },
+      { day: "DAY 1 · SEPT 10", items: ["12:00 LAN opens", "13:00 Qualifier matches", "18:00 Semi-finals"] },
+      { day: "DAY 2 · SEPT 10", items: ["10:00 Grand Final", "14:00 Podium ceremony"] },
     ],
     rules: [
       "No macros, cheats, or trainers — instant DQ + blacklist.",

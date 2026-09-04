@@ -121,7 +121,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
               { icon: <Trophy size={14} />, label: "Prize Pool", value: event.prizePool },
               { icon: <Banknote size={14} />, label: "Entry Fee", value: event.fee },
               { icon: <Users size={14} />, label: "Team", value: event.teamSize },
-              { icon: <Calendar size={14} />, label: "Round", value: "FEB 21–23" },
+              { icon: <Calendar size={14} />, label: "Date", value: "SEPT 10" },
             ].filter((s) => s.value).map((s) => (
               <div
                 key={s.label}

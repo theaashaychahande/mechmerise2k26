@@ -10,7 +10,7 @@ const WORKSHOPS = [
     subtitle: "AI Tools Workshop + Build Challenge",
     description:
       "Day One is a hands-on workshop where students learn to build real software using AI tools, from zero prior experience. Day Two is a live build challenge where students apply what they learned to a given problem statement, with prizes for the strongest builds.",
-    date: "FEB 21–22, 2026",
+    date: "SEPT 7, 2026",
     time: "Day 1: Workshop · Day 2: Build Challenge",
     capacity: "Open",
     fee: "₹ 100 Solo / ₹ 250 Team",
@@ -24,7 +24,7 @@ const WORKSHOPS = [
     subtitle: "AutoCAD Workshop + Competition",
     description:
       "A two-day technical event featuring an AutoCAD workshop followed by a CAD competition. Participants will learn 1D & 2D AutoCAD and compete in a time-based design challenge. Winners will be judged on accuracy, speed, and performance.",
-    date: "FEB 21–22, 2026",
+    date: "SEPT 8, 2026",
     time: "Day 1: Workshop · Day 2: Competition",
     capacity: "Open",
     fee: "₹ 100 / participant",
@@ -38,7 +38,7 @@ const WORKSHOPS = [
     subtitle: "F1 Racing Simulator Challenge",
     description:
       "An F1 racing simulator challenge where participants experience driving an F1 car virtually. Each participant gets a fixed amount of time or a specific number of laps on a selected F1 circuit. Their fastest valid lap time will be recorded and displayed on the leaderboard.",
-    date: "FEB 21–22, 2026",
+    date: "SEPT 9, 2026",
     time: "Practice + Timed Sessions",
     capacity: "Open",
     fee: "₹ 150 Solo / ₹ 250 Duo",
