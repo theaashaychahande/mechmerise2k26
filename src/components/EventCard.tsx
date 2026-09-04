@@ -222,6 +222,7 @@ export default function EventCard({
       </div>
 
       {/* PRIZE POOL BANNER STRIP (bottom) */}
+      {event.prizePool && (
       <div className={`${a.prizeBg} border-t ${a.frameBorder} px-5 py-3 flex items-center justify-between`}>
         <div className="flex items-center gap-2">
           <div className={`w-2 h-2 rounded-full ${a.bar} animate-telemetry-blink`} />
@@ -230,9 +231,10 @@ export default function EventCard({
           </span>
         </div>
         <span className={`font-display-condensed text-xl md:text-2xl font-black tabular ${a.prizeText}`}>
-          {event.prizePool ?? "TBC"}
+          {event.prizePool}
         </span>
       </div>
+      )}
     </motion.article>
   );
 }
