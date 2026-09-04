@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Users } from "lucide-react";
-import { FACULTY, TEAM_LEAD, TEAMS } from "@/lib/team";
+import { FACULTY, TEAM_LEAD } from "@/lib/team";
 
 type Accent = "racing-red" | "circuit-blue" | "pit-amber";
 
@@ -129,11 +129,6 @@ export default function TeamGrid() {
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/55 via-transparent to-carbon/55" />
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
 
-      {/* photo naming hint */}
-      <p className="relative z-10 text-center text-[10px] tracking-[0.2em] uppercase text-titanium/25 pt-8 px-6">
-        ▣ Add passport-size photos as <span className="text-titanium/40">/images/team/&lt;name&gt;.jpg</span>
-      </p>
-
       <div className="relative z-10 max-w-7xl mx-auto px-6 mt-8 space-y-20">
         {/* ─── FACULTY ─── */}
         <div>
@@ -196,58 +191,6 @@ export default function TeamGrid() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
             {TEAM_LEAD.map((s) => (
               <MemberCard key={s.name} member={s} accent="pit-amber" />
-            ))}
-          </div>
-        </div>
-
-        {/* ─── SUB-TEAMS ─── */}
-        <div>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
-          >
-            <div className="inline-flex items-center gap-3 mb-4">
-              <Users size={14} className="text-titanium/60" />
-              <p className="text-[10px] tracking-[0.4em] uppercase text-titanium/60 tabular animate-telemetry-blink">
-                PIT CREW · STUDENT COORDINATORS
-              </p>
-            </div>
-            <h2 className="font-display-condensed text-4xl md:text-5xl font-black leading-none tracking-tighter">
-              <span className="wordmark-bevel">STUDENT</span>{" "}
-              <span className="text-circuit-blue not-italic text-2xl md:text-3xl tracking-[0.2em]">
-                TEAMS
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
-            {TEAMS.map((t, idx) => (
-              <motion.div
-                key={t.team}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ delay: idx * 0.05, duration: 0.5 }}
-                className="relative border border-titanium/15 bg-carbon/40 backdrop-blur-sm overflow-hidden"
-              >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-racing-red via-pit-amber to-racing-red" />
-                <div className="p-5 md:p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <p className="text-[10px] tracking-[0.3em] uppercase text-titanium tabular">
-                      {t.team}
-                    </p>
-                    <span className="h-px w-10 bg-titanium/20" />
-                  </div>
-                  <div className="space-y-4">
-                    {t.members.map((m) => (
-                      <MemberCard key={m.name} member={m} accent="circuit-blue" />
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
             ))}
           </div>
         </div>
