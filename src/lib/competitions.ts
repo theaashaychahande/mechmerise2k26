@@ -77,6 +77,125 @@ export const COMPETITIONS: CompetitionEvent[] = [
     ],
   },
   {
+    slug: "cad-clash",
+    name: "CAD Clash",
+    shortTagline: "Design · Draft · Dominate",
+    accent: "circuit-blue",
+    heroUrl:
+      "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=close%20up%20of%20CAD%20software%20on%20screens%20mechanical%203d%20gear%20assembly%20blueprint%20layers%20circuit%20blue%20hologram%20engineers%20workstation%20dark%20moody%20lighting%20no%20logos%20no%20software%20brands&image_size=landscape_16_9",
+    logoUrl: "/logo/cad%20clash%20logo.png",
+    posterUrl: "/posters/CAD.png",
+    fee: "₹ 100 / participant",
+    teamSize: "Individual · 1",
+    oneLiner:
+      "CAD Clash is a two-day technical event featuring an AutoCAD workshop followed by a CAD competition. Learn 1D & 2D AutoCAD and compete in a time-based design challenge.",
+
+    about:
+      "CAD Clash is a two-day technical event featuring an AutoCAD workshop followed by a CAD competition. Participants will learn 1D & 2D AutoCAD and compete in a time-based design challenge. Winners will be judged on accuracy, speed, and performance.",
+    structure: [
+      "Day 1 — AutoCAD Workshop: Learn 1D & 2D drafting fundamentals.",
+      "Day 2 — CAD Competition: Time-based design challenge on provided stations.",
+      "Scoring: Accuracy (40%) · Speed (30%) · Performance (30%).",
+    ],
+    timeline: [
+      { day: "DAY 1 · FEB 21", items: ["09:00 Workshop registration", "10:00 AutoCAD workshop begins", "16:00 Workshop ends"] },
+      { day: "DAY 2 · FEB 22", items: ["10:00 CAD competition starts", "15:00 Judging", "18:00 Results"] },
+    ],
+    rules: [
+      "Only software provided on lab PCs may be used.",
+      "No USB drives or cloud access inside the hall.",
+      "Units must strictly follow the engineering drawing.",
+      "Save files exactly as instructed — wrong naming = zero marks.",
+    ],
+    faqs: [
+      { q: "Which software is used?", a: "AutoCAD — provided on lab PCs." },
+      { q: "Do I need to bring anything?", a: "Your college ID. Nothing else." },
+    ],
+    coordinators: [
+      { name: "Vaishnavi Nipane", role: "Event Head", phone: "7447254497" },
+    ],
+  },
+  {
+    slug: "race-ready",
+    name: "Race Ready",
+    shortTagline: "F1 Simulator · Lap Time",
+    accent: "pit-amber",
+    heroUrl:
+      "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=low%20angle%20generic%20rc%20racing%20car%20on%20track%20motion%20blur%20amber%20pit%20lighting%20checkered%20flag%20bokeh%20no%20logos%20no%20f1%20liveries%20carbon%20track%20curbs%20dramatic&image_size=landscape_16_9",
+    logoUrl: "/logo/race%20ready%20logo.png",
+    posterUrl: "/posters/Race%20ready.png",
+    fee: "₹ 150 Solo / ₹ 250 Duo",
+    teamSize: "1 – 2 members",
+    oneLiner:
+      "An F1 racing simulator challenge where participants experience driving an F1 car virtually. Fastest valid lap time wins!",
+
+    about:
+      "Race Ready is an F1 racing simulator challenge where participants get a chance to experience driving an F1 car virtually. Each participant gets a fixed amount of time or a specific number of laps on a selected F1 circuit. Their fastest valid lap time will be recorded and displayed on the leaderboard.",
+    structure: [
+      "Practice Laps — Get familiar with the simulator and circuit.",
+      "Timed Session — Fixed laps, best valid lap counts.",
+      "Leaderboard — Fastest lap times displayed live.",
+      "Podium — Top 3 fastest lap times win.",
+    ],
+    timeline: [
+      { day: "DAY 1 · FEB 21", items: ["10:00 Registrations open", "14:00 Practice sessions", "18:00 Timed session begins"] },
+      { day: "DAY 2 · FEB 22", items: ["10:00 Final timed sessions", "15:00 Leaderboard freeze", "17:00 Podium"] },
+    ],
+    rules: [
+      "Each participant gets a fixed time window or lap count.",
+      "Only valid lap times are counted — track limits enforced.",
+      "No external controllers or peripherals allowed.",
+      "Simulator settings cannot be changed by participants.",
+    ],
+    faqs: [
+      { q: "Do I need racing experience?", a: "No, just basic gaming skills." },
+      { q: "Can I practice before my slot?", a: "A short practice window is provided before the timed session." },
+    ],
+    coordinators: [
+      { name: "Chaitanya Bhurande", role: "Event Head", phone: "8010777176" },
+    ],
+  },
+  {
+    slug: "builders-lab",
+    name: "Builder's Lab",
+    shortTagline: "Workshop · AI Tools · Build",
+    accent: "titanium",
+    heroUrl:
+      "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=hands%20working%20in%20a%20mechanical%20workshop%20sparks%20arc%20welding%20steel%20metal%20scrap%20industrial%20vice%20tools%20titanium%20silver%20lighting%20no%20brands%20no%20faces%20cinematic&image_size=landscape_16_9",
+    logoUrl: "/logo/builders%20lab.png",
+    posterUrl: "/posters/builders%20lab.png",
+    fee: "₹ 100 Solo / ₹ 250 Team",
+    teamSize: "1 – 4 members",
+    oneLiner:
+      "A two-day event — Day 1 is a hands-on workshop to build real software using AI tools, Day 2 is a live build challenge with prizes for the strongest builds.",
+
+    about:
+      "Builder's Lab is a two-day, department-hosted technical event. Day One is a hands-on workshop where students learn to build real software using AI tools, from zero prior experience. Day Two is a live build challenge where students apply what they learned to a given problem statement, with prizes for the strongest builds.",
+    structure: [
+      "Day 1 — AI Tools Workshop: Learn to build software with AI assistance.",
+      "Day 2 — Live Build Challenge: Apply skills to a given problem statement.",
+      "Demo + Presentation: Showcase your build to the judges.",
+      "Results — Judged on functionality, creativity, and presentation.",
+    ],
+    timeline: [
+      { day: "DAY 1 · FEB 21", items: ["09:00 Workshop registration", "10:00 AI tools workshop", "16:00 Workshop ends"] },
+      { day: "DAY 2 · FEB 22", items: ["09:00 Build challenge begins", "16:00 Demo presentations", "18:00 Results"] },
+    ],
+    rules: [
+      "No prior coding experience required.",
+      "All tools must be provided or approved by organizers.",
+      "Submissions must be original work done during the event.",
+      "Presentation time is strictly 5 minutes per team.",
+    ],
+    faqs: [
+      { q: "Do I need coding experience?", a: "No, the workshop covers everything from scratch." },
+      { q: "What do I bring?", a: "Your college ID and a laptop (if available)." },
+    ],
+    coordinators: [
+      { name: "Aashay Chanhade", role: "Event Head", phone: "7507666700" },
+    ],
+  },
+  {
     slug: "endo-arena",
     name: "Endo-Arena",
     shortTagline: "Robo-War · Combat Arena",
