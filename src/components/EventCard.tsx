@@ -135,18 +135,6 @@ export default function EventCard({
           className={`absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 ${a.bracket} z-20`}
         />
 
-        {/* Partner badge (top-left overlay) */}
-        <div className="absolute top-4 left-4 z-30">
-          <div
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 border ${a.badgeBg} backdrop-blur-md`}
-          >
-            <Flag size={11} />
-            <span className="text-[9px] font-bold tracking-[0.25em] uppercase tabular">
-              {event.partnerBadge ?? "PARTNER · TBC"}
-            </span>
-          </div>
-        </div>
-
         {/* Index chip (top-right overlay) */}
         <div className="absolute top-4 right-4 z-30">
           <div className={`px-2.5 py-1 text-[10px] font-display-condensed font-black tracking-[0.25em] tabular chevron-pill ${a.topBg}`}>

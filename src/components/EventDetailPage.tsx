@@ -90,7 +90,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-10 md:py-14">
-          {/* Top utility row: back arrow + sponsor badge */}
+          {/* Top utility row: back arrow */}
           <div className="flex items-center justify-between gap-4 mb-8">
             <Link
               href="/competitions"
@@ -99,14 +99,6 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
               <ArrowLeft size={15} />
               All Events
             </Link>
-            <div
-              className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 border ${a.badgeBg} backdrop-blur-md`}
-            >
-              <Flag size={11} />
-              <span className="text-[9px] font-bold tracking-[0.25em] uppercase tabular">
-                {event.partnerBadge ?? "PARTNER · TBC"}
-              </span>
-            </div>
           </div>
 
           {/* Event title block */}
@@ -126,11 +118,11 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
           {/* Quick stat chips */}
           <div className="mt-7 flex flex-wrap gap-3">
             {[
-              { icon: <Trophy size={14} />, label: "Prize Pool", value: event.prizePool ?? "TBC" },
-              { icon: <Banknote size={14} />, label: "Entry Fee", value: event.fee ?? "TBC" },
-              { icon: <Users size={14} />, label: "Team", value: event.teamSize ?? "TBC" },
+              { icon: <Trophy size={14} />, label: "Prize Pool", value: event.prizePool },
+              { icon: <Banknote size={14} />, label: "Entry Fee", value: event.fee },
+              { icon: <Users size={14} />, label: "Team", value: event.teamSize },
               { icon: <Calendar size={14} />, label: "Round", value: "FEB 21–23" },
-            ].map((s) => (
+            ].filter((s) => s.value).map((s) => (
               <div
                 key={s.label}
                 className="flex items-center gap-2.5 px-4 py-2.5 border border-titanium/12 bg-asphalt/50 backdrop-blur-sm"
@@ -187,15 +179,8 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                       <span className={`font-display-condensed text-3xl md:text-4xl font-black italic uppercase tracking-tight ${a.text}`}>
                         {event.name}
                       </span>
-                      <span className="text-[9px] tracking-[0.3em] uppercase text-titanium/50 tabular">
-                        LOGO SLOT · drag transparent PNG here
-                      </span>
                     </div>
                   )}
-                  {/* HUD tag */}
-                  <span className="absolute top-2 left-3 z-20 text-[9px] tracking-[0.3em] uppercase text-white/70 tabular">
-                    logo_01
-                  </span>
                 </div>
               </div>
 
@@ -266,6 +251,7 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
       </section>
 
       {/* ───── COORDINATOR CONTACT STRIP ───── */}
+      {event.coordinators.length > 0 && (
       <section className="max-w-7xl mx-auto px-6 pb-8">
         <div className="border border-titanium/12 bg-asphalt/40">
           <div className="flex items-center gap-3 px-5 py-3 border-b border-titanium/10">
@@ -290,22 +276,27 @@ export default function EventDetailPage({ event }: { event: CompetitionEvent }) 
                     </div>
                   </div>
                 </div>
+                {c.email && (
                 <a
-                  href={`mailto:${c.email ?? "mechmerise2k26@gmail.com"}`}
+                  href={`mailto:${c.email}`}
                   className="inline-flex items-center gap-2 text-[11px] text-titanium/70 hover:text-white transition-colors throttle-link"
                 >
                   <Mail size={13} className={a.text} />
-                  <span className="tabular">{c.email ?? "EMAIL TBC"}</span>
+                  <span className="tabular">{c.email}</span>
                 </a>
+                )}
+                {c.phone && (
                 <span className="inline-flex items-center gap-2 text-[11px] text-titanium/70 tabular">
                   <Phone size={13} className={a.text} />
-                  {c.phone ?? "PHONE TBC"}
+                  {c.phone}
                 </span>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
+      )}
 
       {/* next-call-to-action strip */}
       <section className="max-w-7xl mx-auto px-6 pt-4 pb-2">
