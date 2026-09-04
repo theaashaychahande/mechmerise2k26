@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
+import { motion, useScroll } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Sidebar, { BottomNav } from "@/components/Sidebar";
 import SocialRail from "@/components/SocialRail";
@@ -23,6 +24,7 @@ export default function GlobalSiteChrome({
 }: {
   children: React.ReactNode;
 }) {
+  const { scrollYProgress } = useScroll();
   // Lock body scroll when mobile drawer is open
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -107,6 +109,12 @@ export default function GlobalSiteChrome({
       <Navbar onMenuOpen={setDrawerOpen} />
       <Sidebar />
       <SocialRail />
+
+      {/* ─── Lap Progress / Scroll Bar ─── */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 z-[100] origin-left racing-stripe opacity-90 shadow-[0_0_15px_rgba(225,6,0,0.6)]"
+        style={{ scaleX: scrollYProgress }}
+      />
 
       {/* ─── Page content ─── */}
       <div className={contentClasses}>{children}</div>
