@@ -45,6 +45,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "racing-red",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=cinematic%20dark%20escape%20room%20with%20circuit%20boards%20gears%20levers%20dramatic%20spotlight%20racing%20helmet%20on%20table%20red%20emergency%20lighting%20mechanical%20puzzles%20no%20logos%20no%20text&image_size=landscape_16_9",
+    logoUrl: "/logo/escapex%20logo.png",
+    posterUrl: "/posters/escape%20x.png",
     partnerBadge: "PRESENTED BY · [PARTNER TBC]",
     prizePool: "₹ 15,000",
     fee: "₹ 150 / team",
@@ -87,6 +89,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "circuit-blue",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=close%20up%20of%20CAD%20software%20on%20screens%20mechanical%203d%20gear%20assembly%20blueprint%20layers%20circuit%20blue%20hologram%20engineers%20workstation%20dark%20moody%20lighting%20no%20logos%20no%20software%20brands&image_size=landscape_16_9",
+    logoUrl: "/logo/cad%20clash%20logo.png",
+    posterUrl: "/posters/CAD.png",
     partnerBadge: "POWERED BY · [CAD TOOL TBC]",
     prizePool: "₹ 20,000",
     fee: "₹ 100 / participant",
@@ -126,6 +130,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "pit-amber",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=low%20angle%20generic%20rc%20racing%20car%20on%20track%20motion%20blur%20amber%20pit%20lighting%20checkered%20flag%20bokeh%20no%20logos%20no%20f1%20liveries%20carbon%20track%20curbs%20dramatic&image_size=landscape_16_9",
+    logoUrl: "/logo/race%20ready%20logo.png",
+    posterUrl: "/posters/Race%20ready.png",
     partnerBadge: "IN ASSOCIATION · [AUTOMOTIVE TBC]",
     prizePool: "₹ 25,000",
     fee: "₹ 300 / team",
@@ -166,6 +172,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "titanium",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=hands%20working%20in%20a%20mechanical%20workshop%20sparks%20arc%20welding%20steel%20metal%20scrap%20industrial%20vice%20tools%20titanium%20silver%20lighting%20no%20brands%20no%20faces%20cinematic&image_size=landscape_16_9",
+    logoUrl: "/logo/builders%20lab.png",
+    posterUrl: "/posters/builders%20lab.png",
     partnerBadge: "BUILT WITH · [WORKSHOP TBC]",
     prizePool: "₹ 18,000",
     fee: "₹ 200 / team",
@@ -207,6 +215,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "racing-red",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=robotic%20combat%20arena%20dark%20generic%20battlebots%20in%20cage%20sparks%20flying%20red%20stadium%20lights%20impact%20smoke%20dramatic%20crowd%20silhouette%20no%20logos%20no%20brands&image_size=landscape_16_9",
+    logoUrl: "/logo/endo%20arena%20logo.png",
+    posterUrl: "/posters/endo%20arena.png",
     partnerBadge: "ROBO BATTLE · [PARTNER TBC]",
     prizePool: "₹ 30,000",
     fee: "₹ 400 / bot",
@@ -246,6 +256,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "circuit-blue",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=mysterious%20campus%20treasure%20hunt%20flashlight%20beams%20checkered%20marker%20flag%20clues%20on%20mechanical%20parts%20gears%20compass%20map%20night%20cinematic%20blue%20lighting%20no%20logos&image_size=landscape_16_9",
+    logoUrl: "/logo/treasure%20hunt%20logo.png",
+    posterUrl: "/posters/Treasure%20hunt.png",
     partnerBadge: "CAMPUS RUN · [SPONSOR TBC]",
     prizePool: "₹ 12,000",
     fee: "₹ 120 / team",
@@ -284,6 +296,8 @@ export const COMPETITIONS: CompetitionEvent[] = [
     accent: "pit-amber",
     heroUrl:
       "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=esports%20gaming%20arena%20neon%20amber%20lights%20multiple%20screens%20generic%20racing%20game%20faux%20keyboard%20mouse%20controllers%20silhouette%20crowd%20no%20logos%20no%20software%20brands%20cinematic&image_size=landscape_16_9",
+    logoUrl: "/logo/battle%20verse%20logo.png",
+    posterUrl: "/posters/battle%20verse.png",
     partnerBadge: "LAN ARENA · [GAMING TBC]",
     prizePool: "₹ 16,000",
     fee: "₹ 80 / seat",

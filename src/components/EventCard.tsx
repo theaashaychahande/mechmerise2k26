@@ -158,7 +158,7 @@ export default function EventCard({
         <div className="relative aspect-[16/10] w-full overflow-hidden bg-carbon">
           <motion.div
             style={{
-              backgroundImage: `url(${event.heroUrl})`,
+              backgroundImage: `url(${event.posterUrl ?? event.heroUrl})`,
               scale: 1.05,
             }}
             className="absolute inset-0 bg-cover bg-center"
