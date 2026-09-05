@@ -69,7 +69,7 @@ export default function CompetitionsCTA() {
                   {[
                     { k: "Events", v: "7" },
                     { k: "Workshops", v: "2" },
-                    { k: "Prizes", v: "₹ 2L+" },
+                    { k: "Prizes", v: "₹ 40K+" },
                   ].map((s) => (
                     <div
                       key={s.k}

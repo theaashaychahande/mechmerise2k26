@@ -23,7 +23,7 @@ const PILLARS = [
       "From CAD screens to workshop floors — where raw engineering meets bold, unexpected ideas.",
     icon: Sparkles,
     accent: "circuit-blue",
-    stat: "14",
+    stat: "7",
     statLabel: "Events",
   },
   {
@@ -34,7 +34,7 @@ const PILLARS = [
       "Pit-crew precision meets cohort spirit. Collaborate, build, compete, cross the finish line together.",
     icon: Users,
     accent: "titanium",
-    stat: "2.5K+",
+    stat: "250+",
     statLabel: "Participants",
   },
   {
@@ -42,10 +42,10 @@ const PILLARS = [
     kicker: "Lap 04",
     tagline: "Podium or nothing",
     description:
-      "7+ years of legacy raising the bar every edition. Precision engineering. Uncompromising execution.",
+      "12+ years of legacy raising the bar every edition. Precision engineering. Uncompromising execution.",
     icon: Trophy,
     accent: "pit-amber",
-    stat: "₹ 2L+",
+    stat: "₹ 40K+",
     statLabel: "Prize Pool",
   },
 ] as const;
@@ -91,7 +91,7 @@ export default function LegacyAndPillars() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* ──────── 7+ YEARS LEGACY STRIP ──────── */}
+        {/* ──────── 12+ YEARS LEGACY STRIP ──────── */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -107,11 +107,11 @@ export default function LegacyAndPillars() {
             <div className="md:col-span-4">
               <p className="text-[10px] tracking-[0.4em] uppercase text-titanium/60 tabular mb-4 flex items-center gap-2">
                 <Timer size={14} className="text-racing-red" />
-                Formation Lap · Since 2019
+                Formation Lap · Since 2014
               </p>
               <div className="relative inline-block">
                 <span className="font-display-condensed text-8xl md:text-9xl font-black italic leading-none wordmark-bevel tabular">
-                  7<span className="text-racing-red">+</span>
+                  12<span className="text-racing-red">+</span>
                 </span>
                 <span className="absolute -top-1 -right-4 md:-right-10 font-display-condensed text-2xl font-black italic text-circuit-blue tracking-widest">
                   YRS
@@ -135,9 +135,9 @@ export default function LegacyAndPillars() {
               {/* Mini-stats */}
               <div className="grid grid-cols-3 gap-3 md:gap-4 pt-2">
                 {[
-                  { k: "Editions", v: "08" },
+                  { k: "Editions", v: "12" },
                   { k: "Colleges", v: "60+" },
-                  { k: "Footfall", v: "2.5K+" },
+                  { k: "Footfall", v: "250+" },
                 ].map((s, i) => (
                   <div
                     key={s.k}

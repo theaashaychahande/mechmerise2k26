@@ -54,7 +54,7 @@ const METRICS = [
   {
     kicker: "LAP COUNTER",
     label: "Years Running",
-    value: 8,
+    value: 12,
     suffix: "+",
     icon: Timer,
     accent: "racing-red",
@@ -63,7 +63,7 @@ const METRICS = [
   {
     kicker: "PIT WALL",
     label: "Total Footfall",
-    value: 2500,
+    value: 250,
     suffix: "+",
     icon: Users,
     accent: "circuit-blue",
@@ -72,21 +72,21 @@ const METRICS = [
   {
     kicker: "PRIZE PURSE",
     label: "Total Prize Pool",
-    value: 2,
-    suffix: " L+",
+    value: 40,
+    suffix: "K+",
     prefix: "₹",
     accent: "pit-amber",
     icon: Trophy,
     unit: "INR AT STAKE",
-    displayFactor: 1, // 2 Lakh+
+    displayFactor: 1, // 40 Thousand+
   },
   {
     kicker: "POWER UNIT",
-    label: "Events & Workshops",
-    value: 14,
+    label: "Main Events",
+    value: 7,
     icon: Fuel,
     accent: "titanium",
-    unit: "TOTAL TRACKS",
+    unit: "TOTAL EVENTS",
   },
 ] as const;
 

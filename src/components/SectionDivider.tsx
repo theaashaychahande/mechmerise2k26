@@ -171,7 +171,7 @@ export default function SectionDivider({
           <Trophy size={18} className="text-[#FFB800]" />
           {[
             ["07", "Events"],
-            ["₹ 2L+", "Prize Purse"],
+            ["₹ 40K+", "Prize Purse"],
             ["7 Events", "MECH · SEPT 2026"],
           ].map(([v, k]) => (
             <div key={k} className="flex items-center gap-2">
