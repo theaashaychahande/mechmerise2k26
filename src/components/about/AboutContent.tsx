@@ -65,8 +65,9 @@ export default function AboutContent() {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: "url('/images/events-bg.png')" }}
       />
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/85 to-carbon" />
-      <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/30 to-carbon" />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/55 via-transparent to-carbon/55" />
+      <div aria-hidden className="absolute inset-0 carbon-texture opacity-25 mix-blend-overlay" />
 
       <div className="relative max-w-7xl mx-auto px-6 space-y-20 md:space-y-28">
         {/* ─── DEPARTMENT INTRO ─── */}
