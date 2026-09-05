@@ -58,7 +58,14 @@ export default function Footer() {
                   size={16}
                   className="mt-0.5 text-racing-red shrink-0"
                 />
-                <span>@mechmerise_2k26</span>
+                <a
+                  href="https://www.instagram.com/mechmerise_2k26?igsi=MXRkbnRqbXJ2ZjdvcA=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors throttle-link"
+                >
+                  @mechmerise_2k26
+                </a>
               </li>
             </ul>
           </div>

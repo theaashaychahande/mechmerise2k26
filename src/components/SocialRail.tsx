@@ -11,13 +11,16 @@ import {
   X,
 } from "lucide-react";
 
+const INSTAGRAM_URL =
+  "https://www.instagram.com/mechmerise_2k26?igsi=MXRkbnRqbXJ2ZjdvcA==";
+
 const SOCIALS = [
-  { label: "Instagram", href: "#", Icon: Instagram, ring: "#E1306C" },
-  { label: "X", href: "#", Icon: X, ring: "#FFFFFF" },
-  { label: "LinkedIn", href: "#", Icon: Linkedin, ring: "#0077B5" },
-  { label: "Facebook", href: "#", Icon: Facebook, ring: "#1877F2" },
-  { label: "YouTube", href: "#", Icon: Youtube, ring: "#FF0000" },
-  { label: "WhatsApp", href: "#", Icon: MessageCircle, ring: "#25D366" },
+  { label: "Instagram", href: INSTAGRAM_URL, Icon: Instagram, ring: "#E1306C" },
+  { label: "X", href: INSTAGRAM_URL, Icon: X, ring: "#FFFFFF" },
+  { label: "LinkedIn", href: INSTAGRAM_URL, Icon: Linkedin, ring: "#0077B5" },
+  { label: "Facebook", href: INSTAGRAM_URL, Icon: Facebook, ring: "#1877F2" },
+  { label: "YouTube", href: INSTAGRAM_URL, Icon: Youtube, ring: "#FF0000" },
+  { label: "WhatsApp", href: INSTAGRAM_URL, Icon: MessageCircle, ring: "#25D366" },
 ];
 
 export default function SocialRail() {

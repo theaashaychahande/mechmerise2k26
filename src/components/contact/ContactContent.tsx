@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone, Instagram, MessageSquare, Radio } from "lucide-rea
 import ContactForm from "@/components/ContactForm";
 
 const SOCIALS = [
-  { label: "Instagram", handle: "@mechmerise_2k26", icon: Instagram, href: "#", color: "hover:text-pink-400" },
+  { label: "Instagram", handle: "@mechmerise_2k26", icon: Instagram, href: "https://www.instagram.com/mechmerise_2k26?igsi=MXRkbnRqbXJ2ZjdvcA==", color: "hover:text-pink-400" },
   { label: "WhatsApp", handle: "Join Community", icon: MessageSquare, href: "#", color: "hover:text-[#25D366]" },
 ];
 
