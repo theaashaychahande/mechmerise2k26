@@ -12,6 +12,12 @@ const SOCIALS = [
 export default function ContactContent() {
   return (
     <section className="relative py-16 md:py-32 overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/events-bg.png')" }}
+      />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/85 to-carbon" />
       <div aria-hidden className="absolute inset-0 carbon-texture opacity-50" />
 
       <div className="relative max-w-7xl mx-auto px-6">
