@@ -56,7 +56,7 @@ export default function HomeHero() {
         {/* Generic racing-adjacent key art (original, no real F1 logos/liveries) */}
         <div
           aria-hidden
-          className="absolute inset-0 bg-cover bg-center scale-105 md:scale-110 bg-[url('/images/home-hero-mobile.png')] md:bg-[url('/images/home-hero.png')]"
+          className="absolute inset-0 bg-cover bg-bottom md:bg-center scale-105 md:scale-110 bg-[url('/images/home-hero-mobile.png')] md:bg-[url('/images/home-hero.png')]"
         />
         {/* Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-carbon/70 via-carbon/45 to-carbon" />

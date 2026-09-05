@@ -45,7 +45,7 @@ const PILLARS = [
       "12+ years of legacy raising the bar every edition. Precision engineering. Uncompromising execution.",
     icon: Trophy,
     accent: "pit-amber",
-    stat: "₹ 40K+",
+    stat: "₹ 30K+",
     statLabel: "Prize Pool",
   },
 ] as const;

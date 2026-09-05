@@ -72,13 +72,13 @@ const METRICS = [
   {
     kicker: "PRIZE PURSE",
     label: "Total Prize Pool",
-    value: 40,
+    value: 30,
     suffix: "K+",
     prefix: "₹",
     accent: "pit-amber",
     icon: Trophy,
     unit: "INR AT STAKE",
-    displayFactor: 1, // 40 Thousand+
+    displayFactor: 1, // 30 Thousand+
   },
   {
     kicker: "POWER UNIT",
