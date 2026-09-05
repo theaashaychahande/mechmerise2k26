@@ -135,8 +135,8 @@ export default function LegacyAndPillars() {
               {/* Mini-stats */}
               <div className="grid grid-cols-3 gap-3 md:gap-4 pt-2">
                 {[
-                  { k: "Editions", v: "12" },
-                  { k: "Colleges", v: "60+" },
+                  { k: "Prize Pool", v: "₹1.5L+" },
+                  { k: "Events", v: "14" },
                   { k: "Footfall", v: "250+" },
                 ].map((s, i) => (
                   <div
