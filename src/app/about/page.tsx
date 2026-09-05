@@ -16,6 +16,7 @@ export default function AboutPage() {
         title="ABOUT US"
         subCopy="7+ years of engineering excellence. Three days of building, racing, and re-inventing."
         prompt="aerial%20view%20college%20campus%20engineering%20building%20dramatic%20golden%20hour%20lighting%20modern%20architecture%20trees%20pathways%20no%20logos%20no%20text%20no%20people"
+        image="/images/about-bg.png"
         accent="pit-amber"
       />
       <AboutContent />

@@ -63,7 +63,7 @@ export default function AboutContent() {
       <div
         aria-hidden
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/events-bg.png')" }}
+        style={{ backgroundImage: "url('/images/about-bg.png')" }}
       />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-carbon via-carbon/30 to-carbon" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-carbon/55 via-transparent to-carbon/55" />
