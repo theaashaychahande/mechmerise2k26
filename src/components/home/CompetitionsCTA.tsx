@@ -32,8 +32,7 @@ export default function CompetitionsCTA() {
               aria-hidden
               className="absolute inset-0 opacity-60 bg-cover bg-center"
               style={{
-                backgroundImage:
-                  "url('https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=cinematic%20low%20angle%20racing%20helmet%20cockpit%20perspective%20dramatic%20side%20lighting%20carbon%20fiber%20dark%20moody%20red%20rim%20light%20checkered%20flag%20bokeh%20background%20no%20logos%20no%20text%20no%20real%20liveries&image_size=landscape_16_9')",
+                backgroundImage: "url('/images/events-bg.png')",
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-carbon via-carbon/70 to-carbon/40" />

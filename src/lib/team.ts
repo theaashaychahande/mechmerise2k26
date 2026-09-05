@@ -24,13 +24,13 @@ export const FACULTY: FacultyMember[] = [
     name: "Dr. M. S. Khan",
     role: "Co-curricular In-charge",
     department: "Mechanical Engineering",
-    photo: "/Team/Dr. M. S. Khan.png",
+    photo: "/Team/Dr. V. C. Sontakke.png",
   },
   {
     name: "Dr. V. C. Sontakke",
     role: "Faculty Coordinator",
     department: "Mechanical Engineering",
-    photo: "/Team/Dr. V. C. Sontakke.png",
+    photo: "/Team/Dr. M. S. Khan.png",
   },
 ];
 
